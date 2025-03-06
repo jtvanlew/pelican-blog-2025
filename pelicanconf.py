@@ -6,7 +6,7 @@ PATH = "content"
 
 # STATIC_PATHS = ['images']
 # THEME_STATIC_DIR = "E:\\GitHub\\pelican-blog-2025\\themes"
-THEME = ".\\themes\\clean-blog"
+THEME = "themes/clean-blog"
 TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = 'English'
