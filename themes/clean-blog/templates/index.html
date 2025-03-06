@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block header %}
+    
+    <div class="page-heading">
+        <h1>{{ SITENAME }}</h1>
+        <hr class="small">
+        <span class="subheading">{{ SITESUBTITLE }}</span>
+    </div>
+                
+{% endblock header %}
+
+{% block content %}
+
+    {% if articles %}
+        {% for article in (articles_page.object_list if articles_page else articles) %}
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="post-preview">
+                {% if article.photo_image %}
+                <div class="row">
+                    <a href="{{ SITEURL }}/{{ article.url }}"><img src="{{ SITEURL }}/{{ article.photo_image[2] }}"/></a>
+                </div>
+                {% endif %} 
+                <div class="row">
+                    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+                        <h2 class="post-title">
+                            {{ article.title }}
+                        </h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {%endif%}
+    
+{% include "pagination.html" %}
+
+{% endblock content %}
+

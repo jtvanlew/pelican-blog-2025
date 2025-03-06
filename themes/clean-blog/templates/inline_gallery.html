@@ -1,0 +1,8 @@
+<!-- >>>> Start >>>>> PHOTO plugin: inline_gallery template >>>>>>>>> -->
+{% import "photos_macros.html" as photos_macros %}
+
+
+    {% for title, gallery in galleries %}
+        {{ photos_macros.gallery(title, gallery, 'Default caption') }}
+    {% endfor %}
+<!-- <<<< End <<<<< PHOTO plugin: inline_gallery template <<<<<<<<< -->

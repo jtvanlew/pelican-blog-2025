@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+
+    {% for keyword in article.keywords %}
+        <meta name="keywords" contents="{{keyword}}" />
+    {% endfor %}
+
+    {% for description in article.description %}
+        <meta name="description" contents="{{description}}" />
+    {% endfor %}
+
+    {% for tag in article.tags %}
+        <meta name="tags" contents="{{tag}}" />
+    {% endfor %}
+
+{% endblock %}
+
+{% block opengraph %}
+	{{ super() }}
+	<meta property="og:type" content="article">
+	<meta property="article:author" content="{{ author }}">
+	<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}">
+	<meta property="og:title" content="{{ article.title }}">
+	<meta property="og:description" content="{{ article.headline }}">
+	<meta property="og:image" content="{{ SITEURL }}/{{ article.header_cover }}">
+	<meta property="article:published_time" content="{{ article.date }}">
+{% endblock %}
+
+{% block header %}
+    <!-- Page Header -->
+    <div class="post-heading">
+        <h1>{{ article.title }}</h1>
+        {% if article.headline %}
+            <h3 class="subheading">{{ article.headline }}</h3>
+        {% endif %}
+        <span class="meta">Posted by
+            {% for author in article.authors %}
+                <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+            {% endfor %}
+                on {{ article.locale_date }}
+        </span>
+        {% import 'translations.html' as translations with context %}
+        {{ translations.translations_for(article) }}
+    </div>
+
+{% endblock header %}
+
+{% block content %}
+    <!-- Post Content -->
+    <article>
+        <!-- {% if article.photo_image %}<img src="{{ SITEURL }}/{{ article.photo_image[1] }}" />{% endif %} -->
+        {{ article.content }}
+
+        {% if article.subparts %}
+        <h2>Parts</h2>
+        <ul>
+            {% for part in article.subparts %}
+                <li><a href='{{ SITEURL }}/{{ part.url }}'>{{ part.subtitle }}</a>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+        {% if article.subpart_of %}
+        <h2>Parts</h2>
+        <p>This article is part of <a href='{{ SITEURL }}/{{ article.subpart_of.url }}'>{{ article.subpart_of.title }}</a>:</p>
+        <ul>
+            {% for part in article.subpart_of.subparts %}
+                <li><a href='{{ SITEURL }}/{{ part.url }}'>{{ part.subtitle }}</a>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <!-- {% if article.photo_gallery %}
+        <div class="gallery">
+                {% for title, gallery in article.photo_gallery %}
+                    <h1>{{ title }}</h1>
+                        {% for name, photo, thumb, exif, caption in gallery %}
+                                <a href="{{ SITEURL }}/{{ photo }}" title="{{ name }}" exif="{{ exif }}" caption="{{ caption }}"><img src="{{ SITEURL }}/{{ thumb }}"></a>
+                        {% endfor %}
+                {% endfor %}
+        </div>
+        {% endif %} -->
+    </article>
+
+
+    {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+        <div class="comments">
+            <h2>Comments !</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = '{{ DISQUS_SITENAME }}';
+                var disqus_identifier = '{{ article.url }}';
+                var disqus_url = '{{ SITEURL }}/{{ article.url }}';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    {% endif %}
+{% endblock content %}
