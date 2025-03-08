@@ -4,10 +4,11 @@ SITEURL = ""
 
 PATH = "content"
 
-# STATIC_PATHS = ['images']
-# THEME_STATIC_DIR = "E:\\GitHub\\pelican-blog-2025\\themes"
 THEME = "themes/clean-blog"
 TIMEZONE = 'America/Los_Angeles'
+STATIC_PATHS = [
+    "images",
+]
 
 DEFAULT_LANG = 'English'
 
@@ -37,20 +38,21 @@ PLUGINS = ['sub_parts','photos']
 
 
 PHOTO_LIBRARY = "E:\Pictures\website-publishing-repository"
-PHOTO_THUMB = (360, 360, 70)
+PHOTO_THUMB = (540, 360, 70)
 PHOTO_GALLERY = (2048, 1024, 80)
 PHOTO_ARTICLE = (1170, 1024, 80)
 
-# IMAGE_PROCESS = {
-#     "article-image": ["scale_in 300 300 True"],
-#     "test-image": ["scale_in 800 800 True"],
-#     "thumb": ["crop 0 0 50% 50%", "scale_out 150 150 True", "crop 0 0 150 150"],
-# }
 
-DEFAULT_PAGINATION = 10
+DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_PAGES_ON_MENU = False
+DEFAULT_PAGINATION = 9
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
 PHOTO_INLINE_GALLERY_ENABLED = True
 FILENAME_METADATA = '(?P<slug>(?P<date>\d{4}-\d{2}-\d{2})-[^.]+)'
+
+OUTPUT_PATH = "../jtvanlew.github.io"
+
+SUMMARY_MAX_LENGTH = 50

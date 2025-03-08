@@ -9,7 +9,7 @@ Cheaters route driving to the top to launch long descent
 
 gallery::{photo}2024/05-17-LosPadresBikeCamping/pt0
 
-Ride down to the valley. Passing multiple wash-outs, Middle Santa Ynez Campground, resting at P-Bar Flats campground. Deciding we barely worked so push to Mono campground.
+Ride down to the valley. Passing multiple wash-outs, Middle Santa Ynez Campground, resting at P-Bar Flats campground. Deciding we barely worked so push to Mono campground. Hit with poison oak all up and down arms and hands.
 
 gallery::{photo}2024/05-17-LosPadresBikeCamping/pt1
 

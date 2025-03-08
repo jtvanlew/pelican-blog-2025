@@ -1,10 +1,13 @@
 {% macro gallery(title, gallery, default_caption) -%}
 <div class="gallery text-center">
+    <div class="row">
     {% if title | trim %}<h2>{{ title }}</h2>{% endif %}
     {% for name, photo, thumb, exif, caption in gallery %}
+    <div class="col-md-4 col-sm-6">
         <a href="{{ SITEURL }}/{{ photo }}" title="{{ caption|default(default_caption, true)|e }}">
             <img
                 src="{{ SITEURL }}/{{ thumb }}"
+                class="img-responsive"
                 alt="{{ caption | default(default_caption, true)|e }}"
                 height="{{ thumb.height }}"
                 width="{{ thumb.width }}"
@@ -13,6 +16,8 @@
                 loading="lazy"
             />
         </a>
+    </div>
     {% endfor %}
+    </div>
 </div>
 {% endmacro -%}

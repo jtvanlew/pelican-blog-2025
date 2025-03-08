@@ -13,27 +13,50 @@
 {% block content %}
 
     {% if articles %}
+    <div class="row">
         {% for article in (articles_page.object_list if articles_page else articles) %}
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="post-preview">
-                {% if article.photo_image %}
-                <div class="row">
-                    <a href="{{ SITEURL }}/{{ article.url }}"><img src="{{ SITEURL }}/{{ article.photo_image[2] }}"/></a>
-                </div>
-                {% endif %} 
-                <div class="row">
-                    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
-                        <h2 class="post-title">
-                            {{ article.title }}
-                        </h2>
-                    </a>
+            <div class="col-sm-4 col-xs-12">
+                <div class="post-preview">
+                    {% if article.photo_image %}
+                    <div class="row">
+                        <a href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive" src="{{ SITEURL }}/{{ article.photo_image[2] }}"/></a>
+                    </div>
+                    {% elif article.image %}
+                    <div class="row">
+                        <a href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive" src="{{ SITEURL }}/{{ article.image }}"/></a>
+                    </div>
+                    {% else %}
+                    <div class="row">
+                        <a href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive" src="{{ SITEURL }}/images/vanlew_profile_blank_post.jpg"/></a>
+                    </div>
+                    {% endif %}
+                    <div class="row">
+                    <ul class="list-unstyled">
+                        <li><time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time></li>
+                        <li><a href="{{ SITEURL }}/{{ article.category.url }}"><small>{{ article.category }}</small></a></li>
+                    </ul>
+                    
+                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+                            <h3 class="post-title">
+                                {{ article.title }}
+                            </h3>
+                        </a>
+                        <div class="summary">{{ article.summary|striptags }}<a href="{{ SITEURL }}/{{ article.url }}"> Read more ...</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            {% if loop.index % 3 == 0 %}
+            </div>
+            <div class="row">
+            {% endif %}
+            
         {% endfor %}
+    </div>
     {%endif%}
-    
-{% include "pagination.html" %}
-
+    <hr>
+    <div class="row">
+        {% include "pagination.html" %}
+    </div>
 {% endblock content %}
 
