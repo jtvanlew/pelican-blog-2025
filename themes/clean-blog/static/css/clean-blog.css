@@ -3,6 +3,25 @@
  * Copyright 2014 Start Bootstrap
  * Licensed under Apache 2.0 (https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE)
  */
+
+ /* This is necessary because of rst injecting a border when it builds table */
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.table {
+  border: none;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: none;
+}
+ /* / This is necessary because of rst injecting a border when it builds table */
+
 .navbar {
   color:#404040;
 }
@@ -21,9 +40,16 @@ body {
   font-size: 18px;
   font-weight: 400;
   color: #ececec;
-  background-color: #382852;
+  background: linear-gradient(#382852,#e66465);
 }
-
+.lime-olive{
+  background: #808000;
+  color:#cccccc
+}
+.aquamarine{
+  background: #289D8C ;
+  color:#111111
+}
 p {
   line-height: 1.5;
   margin: 30px 0;

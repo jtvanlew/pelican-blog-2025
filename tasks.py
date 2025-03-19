@@ -23,9 +23,9 @@ CONFIG = {
     "deploy_path": SETTINGS["OUTPUT_PATH"],
     # Remote server configuration
     "ssh_user": "jon",
-    "ssh_host": "5.78.83.5",
+    "ssh_host": "5.78.83.3",
     "ssh_port": "22",
-    "ssh_path": "/home/jon/pelican-blog-2025",
+    "ssh_path": "/var/www/public_html",
     # Host and port for `serve`
     "host": "localhost",
     "port": 8000,

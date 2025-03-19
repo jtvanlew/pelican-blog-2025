@@ -2,17 +2,18 @@
 ############################
 
 :date: 2025-03-16
+:bgcolor: lime-olive
 
-.. image:: /images/IMG_4341.jpeg
+.. image:: ../images/dscf9961_v2.JPG
    :alt: 2023 Rivendell Joe Appaloosa
    :class: img-responsive
 
 
 The bike
 --------
-This is my 2023 Rivendell Joe Appaloosa. I love it of course as the style of Riv bike I started dreaming about after reading Riv's readers back in 2008-ish and started hacking my Peugeot. But this bike will hold an extra-special place in my heart; I picked it up from Walnut Creek the day my wife went into labor for our first child. I was in the garage beginning the assembly after work on a Friday when she called to me from the kitchen with what turned out to be the start of her contractions. 
+I love this bike of course as the final iteration of "Rive-style" bike I'd dreamt about since 2008-ish when I was first hacking my 70s Peugeot to look like what I saw in the Riv Readers. But this bike will hold an extra-special place in my heart in its own right -- I picked it up from Walnut Creek the day my wife went into labor for our first child. I was half-way through assembly in the garage after work on a Friday when she called to me from the kitchen with what turned out to be the start of her contractions. 
 
-At the time I've writing, I've since taken it on a 60+ mile "green fondo" in Sonoma County, a 3 day camping trip on Catalina Island, fetching dog food and groceries, and all sorts of other rides in the hills east of Fremont.
+At the time I've writing (early 2025), I've since taken it on a 60+ mile "green fondo" in Sonoma County, a 3 day camping trip on Catalina Island, regularly  fetching dog food and groceries, and all sorts of other rides in the hills east of Fremont.
 
 Build Details
 -------------
@@ -25,7 +26,7 @@ Frame
    :class: table
    :header: "Component", "Description"
 
-   "Frame", "Steel Frameset 2023 - 60cm / Lime Olive"
+   "Frame", "RBW S!lver CroMo 2023 Frameset, 60cm, Lime Olive"
 
 Wheels & Braking
 ================
@@ -50,8 +51,8 @@ Drivetrain
    :class: table
    :header: "Component", "Description"
 
-   "Rear Cassette", "S-ride 13-42t"
-   "Crankset", "Old Sugino 3x somethings 175 mm, 2x 24-38 with Blue Lug chainguard"
+   "Rear Cassette", "S-ride 13-42t 7sp"
+   "Crankset", "Old Sugino 3x somethings 110 bcd, 2x 24/38 (Sugino/RBW S!lver) + Blue Lug chainguard"
    "RD", "Shimano Alfine (+ Wolftooth Roadlink extender)"
    "FD", "Shimano Deore"
    "Shifters", "Silver2 Shifters + RBW thumbies"
@@ -64,7 +65,7 @@ Cockpit & Touchpoints
    :header: "Component", "Description"
 
    "Handlebar", "Ramble Bar - Golden Pliers x SimWorks, 710 mm c-c, 31.8 mm"
-   "Grips", "Oury V2 light grey"
+   "Grips", "Oury V2 graphite + some Newbaums tape"
    "Stem", "Nitto Fillet FacePlater - 31.8 mm - 110 mm"
    "Seatpost", "26.8 mm Some Kalloy Uno thing? Riv provides with frame"
    "Saddle", "Brooks B17-Carved, Honey"

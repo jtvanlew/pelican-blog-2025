@@ -28,16 +28,16 @@
             <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
         {% endif %}
         {% if CATEGORY_FEED_ATOM and category %}
-            <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
+            <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(slug='category.slug') }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
         {% endif %}
         {% if CATEGORY_FEED_RSS and category %}
-            <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+            <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(slug='category.slug') }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
         {% endif %}
         {% if TAG_FEED_ATOM and tag %}
-            <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
+            <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(slug='tag.slug') }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
         {% endif %}
         {% if TAG_FEED_RSS and tag %}
-            <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+            <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(slug='tag.slug') }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
         {% endif %}
 
         <!-- Bootstrap Core CSS -->
@@ -76,7 +76,14 @@
 	{% endblock opengraph %}
 </head>
 
-<body>    
+{% for p in pages %}
+    {% if p == page %}
+        <body class="{{p.bgcolor}}">
+    {% else %}
+        <body>
+    {% endif %} 
+{% endfor %}
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -101,7 +108,7 @@
                     {% endfor %}
 
                     {% if DISPLAY_PAGES_ON_MENU %}
-                        {% for p in PAGES %}
+                        {% for p in pages %}
                             <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
                         {% endfor %}
                     {% else %}
@@ -118,7 +125,7 @@
         </div>
         <!-- /.container -->
     </nav>
-
+<div class="flex-wrapper">
     <!-- Page Header -->
     <header class="intro-header">
         <div class="container">
@@ -149,7 +156,7 @@
             </div>
         </div>
     </footer>
-
+</div>
     <!-- jQuery -->
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.js"></script>
 

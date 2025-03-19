@@ -1,6 +1,7 @@
 AUTHOR = 'Jon'
 SITENAME = 'jonvanlew.com'
 SITEURL = ""
+RELATIVE_URLS = False
 
 # PATHS
 PATH = "content"
@@ -8,7 +9,6 @@ PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['blog']
 STATIC_PATHS = ["images"]
 PLUGIN_PATHS = ["E:\\GitHub\\pelican\\pelican-plugins"]
-OUTPUT_PATH = "../jtvanlew.github.io"
 ##
 
 PLUGINS = ['sub_parts','photos']
@@ -18,11 +18,6 @@ DEFAULT_LANG = 'En'
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = True
-# MENUITEMS = (
-#     ("Home", "/"),
-#     ("About", "/pages/about.html"),
-#     ("Bikes", "/pages/my-bikes.html"),
-# )
 DEFAULT_PAGINATION = 9
 
 SUMMARY_MAX_LENGTH = 50
