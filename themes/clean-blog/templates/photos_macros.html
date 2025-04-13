@@ -1,22 +1,25 @@
 {% macro gallery(title, gallery, default_caption) -%}
-<div class="gallery text-center">
-    <div class="row">
+<div class="row">
+    <div class="pswp-gallery" id="my-gallery">
     {% if title | trim %}<h2>{{ title }}</h2>{% endif %}
     {% for name, photo, thumb, exif, caption in gallery %}
-    <div class="col-md-4 col-sm-6">
-        <a href="{{ SITEURL }}/{{ photo }}" title="{{ caption|default(default_caption, true)|e }}">
+        <div class="col-md-6 col-sm-12">
+            <a 
+            href="{{ SITEURL }}/{{ photo }}"
+            data-pswp-width="{{ photo.width }}" 
+            data-pswp-height="{{ photo.height }}" 
+            data-cropped="true" 
+            target="_blank">
             <img
-                src="{{ SITEURL }}/{{ thumb }}"
-                class="img-responsive"
-                alt="{{ caption | default(default_caption, true)|e }}"
-                height="{{ thumb.height }}"
-                width="{{ thumb.width }}"
-                {% if thumb.srcset.html_srcset %}srcset="{{ thumb.srcset.html_srcset }}"{% endif %}
-                sizes="(max-width: 768px) 50vw, 33vw"
-                loading="lazy"
-            />
-        </a>
-    </div>
+                    src="{{ SITEURL }}/{{ thumb }}"
+                    class="img-responsive"
+                    alt="{{ caption | default(default_caption, true)|e }}"
+                    height="{{ thumb.height }}"
+                    width="{{ thumb.width }}"
+
+                />
+            </a>
+        </div>
     {% endfor %}
     </div>
 </div>

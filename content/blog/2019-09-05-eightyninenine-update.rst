@@ -1,7 +1,7 @@
 Eighty Nine Nine.com UPDATE!
 ############################
 
-:category: kcrw
+:category: Random
 :image: ../images/kcrw_logo.png
 
 D3 & speed upgrades to Eightyninenine.com

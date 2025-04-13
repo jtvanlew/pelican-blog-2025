@@ -2,7 +2,7 @@ Cleaning up Flickr's Asinine Auto-uploaded Albums
 #################################################
 
 :date: 2016-01-02
-:category: Programming
+:category: Random
 :tags: flickr, photography, python, flickr uploadr
 
 If you Google around for things like "mass delete flickr album", you'll find a lot of people on personal blogs and the flickr forum complaining about Flickr's desktop auto-uploader creating a friggin massive amount of albums. The uploader creates an album for every single folder it finds for your photos -- and since any intelligent photo management software will sort photos into subfolders based on date -- you can see where this will get out of hand.

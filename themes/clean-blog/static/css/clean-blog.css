@@ -37,17 +37,27 @@ article {
 
 body {
   font-family: 'Open Sans', 'Lora','Times New Roman',serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
-  color: #ececec;
-  background: linear-gradient(#382852,#e66465);
+  /* color: #ececec; */
+  color: #004E89;
+  /* background: linear-gradient(#382852,#e66465); */
+  background: #EFEFD0;
+}
+.ana-purple{
+  background: #6327c4;
+  color:#e2e0e0
 }
 .lime-olive{
   background: #808000;
   color:#cccccc
 }
 .aquamarine{
-  background: #289D8C ;
+  background: aquamarine ;
+  color:#111111
+}
+.light-sky-blue{
+  background: lightskyblue ;
   color:#111111
 }
 p {
@@ -63,11 +73,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Ultra', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Ultra', Arial, sans-serif;
   font-weight: 400;
 }
 a {
-  color: #ececec;
+  color: #1A659E;
 }
 a:hover,
 a:focus {
@@ -78,7 +88,7 @@ a img:focus {
   cursor: zoom-in;
 }
 blockquote {
-  color: #ececec;
+  color: #004E89;
   font-style: italic;
 }
 pre {
@@ -88,7 +98,7 @@ hr.small {
   max-width: 100px;
   margin: 15px auto;
   border-width: 4px;
-  border-color: white;
+  border-color: #004E89;
 }
 .navbar-custom {
   position: absolute;
@@ -96,7 +106,7 @@ hr.small {
   left: 0;
   width: 100%;
   z-index: 3;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
 }
 .navbar-custom .navbar-brand {
   font-weight: 800;
@@ -113,7 +123,7 @@ hr.small {
     border-bottom: 1px solid transparent;
   }
   .navbar-custom .navbar-brand {
-    color: white;
+    color: #004E89;
     padding: 20px;
   }
   .navbar-custom .navbar-brand:hover,
@@ -121,12 +131,12 @@ hr.small {
     color: rgba(255, 255, 255, 0.8);
   }
   .navbar-custom .nav li a {
-    color: white;
+    color: #004E89;
     padding: 20px;
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
-    color: rgba(255, 255, 255, 0.8);
+    color: #1A659E;
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -154,14 +164,14 @@ hr.small {
     transition: transform 0.3s;
   }
   .navbar-custom.is-fixed .navbar-brand {
-    color: #ececec;
+    color: #004E89;
   }
   .navbar-custom.is-fixed .navbar-brand:hover,
   .navbar-custom.is-fixed .navbar-brand:focus {
     color: #0085a1;
   }
   .navbar-custom.is-fixed .nav li a {
-    color: #ececec;
+    color: #004E89;
   }
   .navbar-custom.is-fixed .nav li a:hover,
   .navbar-custom.is-fixed .nav li a:focus {
@@ -189,7 +199,8 @@ hr.small {
 .intro-header .post-heading,
 .intro-header .page-heading {
   padding: 50px 0 50px;
-  color: rgb(207, 135, 207);
+  /* color: rgb(207, 135, 207); */
+  color: #FF6B35;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading,
@@ -212,7 +223,7 @@ hr.small {
   font-size: 24px;
   line-height: 1.1;
 			display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
 }
@@ -229,19 +240,19 @@ hr.small {
   display: block;
 }
 .intro-header .post-heading .subheading {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 24px;
   margin: 10px 0 30px;
   font-weight: 600;
 }
 .intro-header .post-heading .meta {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Times New Roman', serif;
   font-style: italic;
   font-weight: 300;
   font-size: 20px;
 }
 .intro-header .post-heading .meta a {
-  color: white;
+  color: #F7C59F;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .post-heading h1 {
@@ -255,7 +266,7 @@ hr.small {
   margin-bottom:50px;
 }
 .post-preview > a {
-  color: #ececec;
+  color: #004E89;
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
@@ -280,7 +291,7 @@ hr.small {
 }
 .post-preview > .post-meta > a {
   text-decoration: none;
-  color: #ececec;
+  color: #004E89;
 }
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
@@ -370,7 +381,7 @@ form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
 }
 .btn {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;
@@ -393,7 +404,7 @@ form .row:first-child .floating-label-form-group {
 }
 .pager li > a,
 .pager li > span {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;

@@ -49,6 +49,7 @@
 
 {% block content %}
     <!-- Post Content -->
+    <div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
     <article>
         {{ article.content }}
 
@@ -72,6 +73,7 @@
         {% endif %}
 
     </article>
+    </div>
 
 
     {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
