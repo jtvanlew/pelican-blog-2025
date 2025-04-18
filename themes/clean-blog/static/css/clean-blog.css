@@ -39,14 +39,16 @@ body {
   font-family: 'Open Sans', 'Lora','Times New Roman',serif;
   font-size: 22px;
   font-weight: 400;
-  /* color: #ececec; */
   color: #004E89;
-  /* background: linear-gradient(#382852,#e66465); */
   background: #EFEFD0;
 }
 .ana-purple{
   background: #6327c4;
   color:#e2e0e0
+}
+.powder-blue{
+  background: powderblue;
+  color:#111111
 }
 .lime-olive{
   background: #808000;
@@ -116,6 +118,11 @@ hr.small {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
+}
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 16px; /* Adjust the font size as needed */
+  }
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
