@@ -118,7 +118,13 @@ hr.small {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
+  color:#004E89;
 }
+
+.navbar-default .navbar-brand {
+  color:#004E89;
+}
+
 @media only screen and (max-width: 480px) {
   body {
     font-size: 16px; /* Adjust the font size as needed */

@@ -1,7 +1,10 @@
 My bikes
 ########
 
+:status: hidden
+:parent: True
 :date: 2025-03-16
+:root: True
 
 
 And I quote:
@@ -11,62 +14,6 @@ And I quote:
    Bill Walton
 
 
-.. raw:: html
-
-    <embed>
-        <div class="overlay">
-    </embed>
-
-.. csv-table:: 
-   :class: table
-
-   "`Rivendell / 2023 / A. Homer Hilsen <{filename}2023-a-homer-hilsen.rst>`_ |homer|", "`Rivendell / 2024 / Roaduno <{filename}2024-roaduno.rst>`_ |roaduno|"
-   "`Rivendell / 2023 / Joe Appalloosa <{filename}2023-joe-appaloosa.rst>`_ |appalloosa|", "`Rivendell / 2022 / Gus Boots Wilsen <{filename}2022-gus-boots-wilsen.rst>`_ |gus| "
-   "`Schwinn / 1983 / High Sierra <{filename}1983-schwinn-high-sierra.rst>`_ |schwinn|", "`Surly / 2012 / Ogre <{filename}2012-surly-ogre.rst>`_ |ogre|"
-   "`SOMA / 2010 / DoubleCross <{filename}2010-soma-doublecross.rst>`_ |soma|", "Peugeot / 197X / ???"
-   
-
-
-.. raw:: html
-
-    <embed>
-        </div>
-    </embed>
-
-.. |soma| image:: ../images/IMG_9552.JPG
-   :alt: 2010 SOMA DoubleCross
-   :class: img-responsive
-   :target: {filename}2010-soma-doublecross.rst
-
-.. |gus| image:: ../images/DSCF9662.JPG
-   :alt: 2022 Gus Boots Wilsen
-   :class: img-responsive
-   :target: {filename}2022-gus-boots-wilsen.rst
-
-.. |roaduno| image:: ../images/DSCQ0022.JPG
-   :alt: 2024 Rivendell Roaduno
-   :class: img-responsive
-   :target: {filename}2024-roaduno.rst
-
-.. |homer| image:: ../images/DSC_0005.jpg
-   :alt: 2023 Rivendell A. Homer Hilsen
-   :class: img-responsive
-   :target: {filename}2023-a-homer-hilsen.rst
-
-.. |appalloosa| image:: ../images/dscf9961_v2.JPG
-   :alt: 2023 Rivendell Joe Appaloosa
-   :class: img-responsive
-   :target: {filename}2023-joe-appaloosa.rst
-
-.. |schwinn| image:: ../images/DSC_0011.jpg
-   :alt: 1983 Schwinn High Sierra
-   :class: img-responsive
-   :target: {filename}1983-schwinn-high-sierra.rst
-
-.. |ogre| image:: ../images/8422664932_4b86c69a23_z.jpg
-   :alt: 2012 Surly Ogre
-   :class: img-responsive
-   :target: {filename}2012-surly-ogre.rst
 
 I've had a handful of badass bikes in the last 20+ years. The first in my adult life was a Peugeot 10-speed I got from my neighbor in Chandler. I rode all around Tucson with almost no maintenance for almost 10 years. What else could you ever need besides tooling around on a beat up old steel bike with drop bars and skinny tires? 
 

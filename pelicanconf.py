@@ -21,7 +21,8 @@ DISPLAY_PAGES_ON_MENU = False
 DEFAULT_PAGINATION = 9
 
 MENUITEMS = (
-    ("Home", "/"),
+    ("Categories", "/categories.html"),
+    ("Tags", "/tags.html"),
     ("Bikes", "/pages/my-bikes.html"),
 )
 

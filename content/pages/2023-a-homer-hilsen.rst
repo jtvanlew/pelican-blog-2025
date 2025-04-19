@@ -1,9 +1,14 @@
 2024 A. Homer Hilsen
 #####################
 
+:bike: True
 :date: 2025-03-23
 :bgcolor: light-sky-blue
 :gallery: {photo}Bikes/Homer
+:image: ../images/DSC_0005.jpg
+:make: Rivendell
+:year: 2023
+:model: A. Homer Hilsen
 
 .. image:: ../images/DSC_0005.jpg
    :alt: 2023 Rivendell A. Homer Hilsen

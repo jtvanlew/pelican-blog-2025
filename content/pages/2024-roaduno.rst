@@ -3,6 +3,11 @@
 
 :date: 2025-03-23
 :bgcolor: ana-purple
+:bike: True
+:image: ../images/DSCQ0022.JPG
+:make: Rivendell
+:year: 2024
+:model: Roaduno
 
 .. image:: ../images/DSCQ0022.JPG
    :alt: 2024 Rivendell Roaduno

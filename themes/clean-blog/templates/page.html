@@ -4,15 +4,38 @@
 
 {% block header %}
     <!-- Page Header -->
-    <header class="intro-header">
-        <div class="post-heading">
-            <h1>{{ page.title }}</h1>
-        </div>
-    </header>
+    <div class="page-heading">
+        <h1>{{ page.title }}</h1>
+        <hr class="small">
+    </div>
 {% endblock header %}
 
 {% block content %}
-<div class="col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1">
-    <article>{{ page.content }}</article>
+{% if page.root == "True" %}
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+        <div class="row">
+        {% for p in pages %}
+            {% if p.bike == "True" %}
+            <div class="col-lg-4 col-sm-12">        
+                <h2>{{ p.make }}</h2>
+                <a href="{{ SITEURL }}/{{ p.url }}">{{ p.year }} {{ p.model }}</a>
+                <a href="{{ SITEURL }}/{{ p.url }}"><img class="img-responsive center-block" src="{{ p.image }}"/></a>
+            </div>
+            {% endif %}
+            {% if loop.index % 3 == 0 %}
+                </div>
+                <div class="row">
+                {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1">
+        <article>{{ page.content }}</article>
+    </div>
 </div>
 {% endblock content %}

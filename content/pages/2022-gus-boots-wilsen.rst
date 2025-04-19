@@ -1,9 +1,14 @@
 2022 Rivendell Gus Boots Wilsen
 ###############################
 
+:bike: True
 :date: 2025-03-16
 :gallery: {photo}Bikes/Gus
 :bgcolor: aquamarine
+:image: ../images/DSCF9662.JPG
+:make: Rivendell
+:year: 2022 
+:model: Gus Boots Wilsen
 
 .. image:: ../images/DSCF9662.JPG
    :alt: 2022 Gus Boots Wilsen
@@ -25,7 +30,7 @@ The premise
 The bike
 --------
 
-I got this big beautiful bitch with the original intentions for it to be a dedicated bike camper and with full subscription to the RBW hillibike ethos. And I did of course take it on a couple bike campings and up and down the hills east of town. But it wasn't long before J.Meinte was born and I found the drooping top tube + insane stability of the geometry to be a perfect platform for child transporter. Gus now still goes out most weekends, but now for more chill hillirides with baby on board, down to the park, or as commuter to daycare and/or back.
+I got this big beautiful beast with the original intentions for it to be a dedicated bike camper and with full subscription to the RBW hillibike ethos. And I did of course take it on a couple bike campings and up and down the hills east of town. But it wasn't long before J.Meinte was born and I found the drooping top tube + insane stability of the geometry to be a perfect platform for child transporter. Gus now still goes out most weekends, but now for more chill hillirides with baby on board, down to the park, or as commuter to daycare and/or back.
 
 gallery::{photo}Bikes/Gus
 
@@ -95,6 +100,4 @@ Accessories
    "Pump", "Zefal HPX(-4?)"
    "Rear Rack", "Nitto x Rivendell 52F basket rack + Wald 139"
    "Kickstand", "Soma Heavy Duty Double"
-   "Childseat", "Thule Yepp Nexxt 2 mini (as an aside, the naming schemes from Thule are nauseating)"
-   "Bags", "Swift Industries Zeitgeist saddlebag, handmade basket bag in 10 oz waxed canvas"
 

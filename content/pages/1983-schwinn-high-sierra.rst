@@ -2,7 +2,12 @@
 ########################
 
 :date: 2025-04-18
+:bike: True
 :bgcolor: powder-blue
+:image: ../images/DSC_0011.jpg
+:make: Schwinn
+:year: 1983
+:model: High Sierra
 :gallery: {photo}Bikes/Schwinn/debut, {photo}Bikes/Schwinn/rebuild, {photo}Bikes/Schwinn/modeling
 
 The bike
