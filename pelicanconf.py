@@ -35,7 +35,10 @@ PHOTO_GALLERY = (2048, 2048, 80)
 PHOTO_ARTICLE = (1170, 1024, 80)
 PHOTO_INLINE_GALLERY_ENABLED = True
 FILENAME_METADATA = '(?P<slug>(?P<date>\d{4}-\d{2}-\d{2})-[^.]+)'
+PHOTO_SQUARE_THUMB = True
 ##
+
+PAGE_ORDER_BY = 'reversed-date'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -44,3 +47,5 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 ##
+
+DISQUS_SITENAME = 'jonnyvlreport'

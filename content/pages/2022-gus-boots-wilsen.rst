@@ -2,13 +2,16 @@
 ###############################
 
 :bike: True
-:date: 2025-03-16
+:date: 2022-12-23
 :gallery: {photo}Bikes/Gus
 :bgcolor: aquamarine
 :image: ../images/DSCF9662.JPG
 :make: Rivendell
 :year: 2022 
 :model: Gus Boots Wilsen
+:service_years: 2022-Present
+:condition: Semi-dedicated mountain bike
+:shop: Rivendell Bicycle Works, Walnut Creek, CA
 
 .. image:: ../images/DSCF9662.JPG
    :alt: 2022 Gus Boots Wilsen

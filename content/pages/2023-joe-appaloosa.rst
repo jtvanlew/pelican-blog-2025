@@ -1,13 +1,16 @@
 2023 Rivendell Joe Appaloosa
 ############################
 
-:date: 2025-03-16
+:date: 2023-09-17
 :bgcolor: lime-olive
 :bike: True
 :image: ../images/dscf9961_v2.JPG
 :make: Rivendell
 :year: 2023
 :model: Joe Appaloosa
+:service_years: 2023-Present
+:condition: Bike camper, child commuter
+:shop: Rivendell Bicycle Works, Walnut Creek, CA
 
 .. image:: ../images/dscf9961_v2.JPG
    :alt: 2023 Rivendell Joe Appaloosa

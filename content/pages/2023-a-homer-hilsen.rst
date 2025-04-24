@@ -9,6 +9,9 @@
 :make: Rivendell
 :year: 2023
 :model: A. Homer Hilsen
+:service_years: 2025-Present
+:condition: Road bike
+:shop: Rivendell Bicycle Works, Walnut Creek, CA
 
 .. image:: ../images/DSC_0005.jpg
    :alt: 2023 Rivendell A. Homer Hilsen

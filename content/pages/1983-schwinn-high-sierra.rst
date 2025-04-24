@@ -1,13 +1,16 @@
 1983 Schwinn High Sierra
 ########################
 
-:date: 2025-04-18
+:date: 2020-04-07
 :bike: True
 :bgcolor: powder-blue
 :image: ../images/DSC_0011.jpg
 :make: Schwinn
 :year: 1983
 :model: High Sierra
+:service_years: 2020-2025
+:condition: Donated to co-op
+:shop: Craigslist
 :gallery: {photo}Bikes/Schwinn/debut, {photo}Bikes/Schwinn/rebuild, {photo}Bikes/Schwinn/modeling
 
 The bike
