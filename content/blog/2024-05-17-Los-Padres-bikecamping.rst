@@ -2,8 +2,7 @@
 ################################
 
 :date: 2024-05-17
-:category: Bike Camping
-:tags: Los Padres National Forest, California
+:tags: Los Padres National Forest, Santa Ynez, California, Bike Camping, Bikes
 :gallery: {photo}2024/05-17-LosPadresBikeCamping/pt0, {photo}2024/05-17-LosPadresBikeCamping/pt1, {photo}2024/05-17-LosPadresBikeCamping/pt2, {photo}2024/05-17-LosPadresBikeCamping/pt3, {photo}2024/05-17-LosPadresBikeCamping/pt4, {photo}2024/05-17-LosPadresBikeCamping/pt5
 :image: {photo}2024/05-17-LosPadresBikeCamping/pt0/2024-11-04-21-44_02.jpg
 

@@ -1,13 +1,12 @@
 Salzburg, Austria (2022-07-09)
 ##############################
 
-:date: 2025-04-23
-:category: Travel
+:date: 2022-07-02
+:modified: 2025-04-23
 :tags: Salzburg, Austria, Travel
 :image: {photo}2022/07-02-Austria/Salzburg_2/2022-07-Austria_0033.jpg
 :gallery: {photo}2022/07-02-Austria/Villach, {photo}2022/07-02-Austria/Salzburg_1, {photo}2022/07-02-Austria/Salzburg_2, {photo}2022/07-02-Austria/Salzburg_3, {photo}2022/07-02-Austria/Salzburg_4, {photo}2022/07-02-Austria/Salzburg_5
-
-This is a trip report from July of 2022 because it's taken me this long to stop being lazy.
+:summary: A few days in Salzburg, Austria on the way back home from Italy
 
 We wrapped up work in Udine a few days before my scheduled flight home from Munich, so I took the chance to take the slow route into the Alps and visit a couple places in Austria on my way. I took a bus from Udine to Villach, and then a train from there to Salzburg. On the bus, I sat next to a nice lady (hereafter referred to as the Romanian Witch) that was quiet the entire time sitting at the bus station but almost immediately started hacking and wet-coughing into her kerchief the moment the bus pulled out of the terminal. Mind you this was just at the tail end of COVID controlling the world. Masks were intermittently required in public places - and on this particular bus it was mask-optional so of course I wanted to be cool and also go mask free.
 

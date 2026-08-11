@@ -42,8 +42,14 @@ def clean(c):
 
 @task
 def build(c):
-    """Build local version of site"""
-    pelican_run("-s {settings_base}".format(**CONFIG))
+    """Build local version of site with quiet output"""
+    pelican_run("-q -s {settings_base}".format(**CONFIG))
+
+
+@task
+def build_debug(c):
+    """Build local version of site with debug tracebacks enabled"""
+    pelican_run("-D -s {settings_base}".format(**CONFIG))
 
 
 @task
@@ -99,7 +105,8 @@ def livereload(c):
     from livereload import Server
 
     def cached_build():
-        cmd = "-s {settings_base} -e CACHE_CONTENT=true LOAD_CONTENT_CACHE=true"
+        # Disable content cache in watch mode to avoid stale/corrupt pickle reads.
+        cmd = "-s {settings_base} -e CACHE_CONTENT=false LOAD_CONTENT_CACHE=false"
         pelican_run(cmd.format(**CONFIG))
 
     cached_build()
@@ -146,5 +153,8 @@ def publish(c):
 
 
 def pelican_run(cmd):
+    # Ensure debug/error logs with Unicode characters render correctly on Windows.
+    os.environ.setdefault("PYTHONUTF8", "1")
+    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
     cmd += " " + program.core.remainder  # allows to pass-through args to pelican
     pelican_main(shlex.split(cmd))

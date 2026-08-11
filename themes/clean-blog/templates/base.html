@@ -9,12 +9,16 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+          <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+
+          {# Version token for cache-busting static assets. If THEME_VERSION is
+              set in pelicanconf.py, append ?v=THEME_VERSION to static URLs. #}
+          {% set v = ('?v=' + THEME_VERSION) if THEME_VERSION else '' %}
 
         <!-- {% if (article and article.photo_gallery) or (articles_page and articles_page.object_list[0].photo_gallery) %}
             <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/magnific-popup.css">
         {% endif %} -->
-        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/photoswipe/dist/photoswipe.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/photoswipe/dist/photoswipe.css{{ v }}">
 
         {% if FEED_ALL_ATOM %}
             <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
@@ -41,28 +45,29 @@
             <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(slug='tag.slug') }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
         {% endif %}
 
-        <!-- Bootstrap Core CSS -->
-        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css{{ v }}" rel="stylesheet">
 
-        <!-- Custom CSS -->
-        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/clean-blog.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/clean-blog.css{{ v }}" rel="stylesheet">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter (body), Source Sans 3 (smaller headers), Abril Fatface (display h1), Caprasimo (alternate display) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Source+Sans+3:wght@400;600&family=Abril+Fatface&family=Caprasimo&display=swap" rel="stylesheet">
 
 
         <!-- Code highlight color scheme -->
         {% if COLOR_SCHEME_CSS %}
-            <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/code_blocks/{{ COLOR_SCHEME_CSS }}" rel="stylesheet">
+            <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/code_blocks/{{ COLOR_SCHEME_CSS }}{{ v }}" rel="stylesheet">
         {% else %}
-            <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/code_blocks/darkly.css" rel="stylesheet">
+            <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/code_blocks/darkly.css{{ v }}" rel="stylesheet">
         {% endif %}
 
         <!-- Custom Fonts -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,13 +83,15 @@
 	{% endblock opengraph %}
 </head>
 
-{% for p in pages %}
-    {% if p == page %}
-        <body class="{{p.bgcolor}}">
-    {% else %}
-        <body>
-    {% endif %} 
-{% endfor %}
+{# Build body classes from config (PALETTE) and optional page bgcolor #}
+{% set body_classes = [] %}
+{% if PALETTE %}
+    {% set body_classes = body_classes + ['palette-' + PALETTE] %}
+{% endif %}
+{% if page and page.bgcolor %}
+    {% set body_classes = body_classes + [page.bgcolor] %}
+{% endif %}
+<body{% if body_classes %} class="{{ ' '.join(body_classes) }}"{% endif %}>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -156,10 +163,10 @@
     </footer>
 </div>
     <!-- jQuery -->
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.js{{ v }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/bootstrap.min.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/bootstrap.min.js{{ v }}"></script>
 
     <!-- Custom Theme JavaScript -->
     <!-- <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/clean-blog.min.js"></script> -->
@@ -169,15 +176,19 @@
 
     <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    
+    <!-- Gallery layout randomizer: break up large galleries into varied rows -->
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/gallery-randomizer.js{{ v }}"></script>
     <script type="module">
-        import PhotoSwipeLightbox from '{{ SITEURL }}/{{ THEME_STATIC_DIR }}/photoswipe/dist/photoswipe-lightbox.esm.js';
-        import PhotoSwipe from '{{ SITEURL }}/{{ THEME_STATIC_DIR }}/photoswipe/dist/photoswipe.esm.js';
-        const lightbox = new PhotoSwipeLightbox({
-          gallery: '#my-gallery',
-          children: 'a',
-          pswpModule: PhotoSwipe
-        });
+        import PhotoSwipeLightbox from '{{ SITEURL }}/{{ THEME_STATIC_DIR }}/photoswipe/dist/photoswipe-lightbox.esm.js{{ v }}';
+        import PhotoSwipe from '{{ SITEURL }}/{{ THEME_STATIC_DIR }}/photoswipe/dist/photoswipe.esm.js{{ v }}';
+                const lightbox = new PhotoSwipeLightbox({
+                    // Attach to all galleries rendered with class .pswp-gallery so each
+                    // gallery acts as its own PhotoSwipe group (allows scrolling between
+                    // images after opening one).
+                    gallery: '.pswp-gallery',
+                    children: 'a',
+                    pswpModule: PhotoSwipe
+                });
         lightbox.init();
     </script>
 

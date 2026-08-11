@@ -2,7 +2,6 @@ Udine, Italy - Work Trip (2022-06-23)
 #####################################
 
 :date: 2025-04-22
-:category: Travel
 :tags: Udine, Italy, Travel
 :image: {photo}2022/06-23-Udine/Venzone/DSC_0054.jpg
 :gallery: {photo}2022/06-23-Udine/Cividale_del_Friuli, {photo}2022/06-23-Udine/Udine, {photo}2022/06-23-Udine/Venzone, {photo}2022/06-23-Udine/Trieste

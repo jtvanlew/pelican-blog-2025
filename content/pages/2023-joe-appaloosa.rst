@@ -4,7 +4,7 @@
 :date: 2023-09-17
 :bgcolor: lime-olive
 :bike: True
-:image: ../images/dscf9961_v2.JPG
+:image: {filename}../images/dscf9961_v2.JPG
 :make: Rivendell
 :year: 2023
 :model: Joe Appaloosa

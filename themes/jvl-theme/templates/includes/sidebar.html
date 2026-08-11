@@ -1,0 +1,50 @@
+<!-- Sidebar -->
+        <li class="sidebar-brand">
+            <a href="{{ SITEURL }}/">
+                {% if not HIDE_SITENAME %}{{ SITENAME }}{% endif %}
+            </a>
+        </li>
+
+        {% for title, link in MENUITEMS %}
+            <li><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+        {% if not PAGES_SORT_ATTRIBUTE -%}
+            {% set PAGES_SORT_ATTRIBUTE = 'title' %}
+        {%- endif %}
+        {% if DISPLAY_PAGES_ON_MENU %}
+          
+            {% for p in pages | sort(attribute=PAGES_SORT_ATTRIBUTE) %}
+                {% if p.url %}
+                 <li><a href="{{ SITEURL }}/{{ p.url }}">
+                     {{ p.menulabel|default(p.title) }}
+                  </a></li>
+                {% endif %}
+              {% endfor %}
+        {% endif %}
+        {% if DISPLAY_CATEGORIES_ON_MENU %}
+            {% for cat, null in categories %}
+                <li {% if cat == category %}class="active"{% endif %}>
+                    <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
+                </li>
+            {% endfor %}
+        {% endif %}
+        <hr>
+        <li><p>My other pages:</p></li>
+        {% include 'includes/sidebar/links.html' %}
+<hr>
+<li><p>Find me online:</p></li>
+    {% include 'includes/sidebar/optional_top.html' ignore missing %}
+    {% include 'includes/sidebar/social.html' %}
+    {% include 'includes/sidebar/recent_posts.html' %}
+    {% include 'includes/sidebar/categories.html' %}
+    {% include 'includes/sidebar/tag_cloud.html' %}
+    {% include 'includes/sidebar/show_source.html' %}
+    {% include 'includes/sidebar/series.html' %}
+    {% include 'includes/sidebar/github.html' %}
+    {% include 'includes/sidebar/twitter_timeline.html' %}
+    
+    {% include 'includes/sidebar/authors.html' %}
+    {% include 'includes/sidebar/images.html' %}
+    {% include 'includes/sidebar/archive.html' %}
+    {% include 'includes/sidebar/optional_bottom.html' ignore missing %}
+<!-- End Sidebar -->

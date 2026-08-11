@@ -1,0 +1,59 @@
+<!-- Custom inline gallery carousel template -->
+{% macro _render_gallery(title, gallery, idx) -%}
+<div class="inline-gallery-carousel">
+  {% if title | trim %}<h2>{{ title }}</h2>{% endif %}
+  <div id="carousel-{{ idx }}" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      {% for i in range(0, gallery|length) %}
+          <li data-slide-to="{{ i }}" class="{% if i == 0 %}active{% endif %}"></li>
+      {% endfor %}
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+      <!-- Custom inline gallery carousel template -->
+      {% macro _render_gallery(title, gallery, idx) -%}
+      <div class="inline-gallery-carousel">
+        {% if title | trim %}<h2>{{ title }}</h2>{% endif %}
+        <div id="carousel-{{ idx }}" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            {% for i in range(0, gallery|length) %}
+              <li data-target="#carousel-{{ idx }}" data-slide-to="{{ i }}" class="{% if i == 0 %}active{% endif %}"></li>
+            {% endfor %}
+          </ol>
+
+          <div class="carousel-inner" role="listbox">
+            {% for item in gallery %}
+              {% set name = item[0] %}
+              {% set photo = item[1] %}
+              {% set thumb = item[2] %}
+              {% set exif = item[3] %}
+              {% set caption = item[4] %}
+              <div class="item {% if loop.index0 == 0 %}active{% endif %}">
+                <a href="{{ SITEURL }}/{{ photo }}" target="_blank">
+                  <img src="{{ SITEURL }}/{{ thumb }}" alt="{{ caption|default('')|e }}" class="img-responsive center-block" />
+                </a>
+                {% if caption %}
+                  <div class="carousel-caption">
+                    {{ caption }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+
+          <a class="left carousel-control" href="#carousel-{{ idx }}" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-{{ idx }}" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      {%- endmacro %}
+
+      {% for title, gallery in galleries %}
+        {{ _render_gallery(title, gallery, loop.index0) }}
+      {% endfor %}
+        function manualGoTo(to) {

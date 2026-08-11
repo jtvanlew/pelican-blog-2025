@@ -5,7 +5,126 @@
  */
 
  /* This is necessary because of rst injecting a border when it builds table */
-.flex-wrapper {
+
+:root {
+  /* Default palette: Calm Slate — a cool, muted teal/blue scheme (less 'Halloween') */
+  --bg: #0f1720;          /* deep blue-gray */
+  --text: #E6EEF3;        /* very pale blue-gray */
+  --muted: #9DB0BA;       /* desaturated blue for secondary text */
+  --accent: #2AA198;      /* soft teal accent (headings, highlights) */
+  --link: #7FC8E2;        /* brighter link color */
+  --code-bg: #071216;     /* dark code background */
+  --code-text: #E9F2F5;   /* code text */
+}
+
+/* Alternate palettes. Add one of these classes to the <body> element to preview.
+   Example: <body class="palette-forest"> ... </body>
+*/
+.palette-forest {
+  /* Forest: deep green/olive, warm but natural */
+  --bg: #07120e;
+  --text: #E9F3EA;
+  --muted: #B7C6B5;
+  --accent: #7FB069;
+  --link: #A7D2A0;
+  --code-bg: #07120e;
+  --code-text: #EEF7EE;
+}
+
+.palette-coastal {
+  /* Coastal: cool blue-gray and sky-blue accents */
+  --bg: #0b1620;
+  --text: #E7F0F6;
+  --muted: #B8C9D2;
+  --accent: #5BC0EB;
+  --link: #7FC8E2;
+  --code-bg: #07121a;
+  --code-text: #EAF6FB;
+}
+
+.palette-warmbeige {
+  /* Warm-beige: softer neutrals and a gentle warm highlight */
+  --bg: #0f1112;
+  --text: #F3EEE6;
+  --muted: #C7BDB0;
+  --accent: #D6BFA6;
+  --link: #EFD9C1;
+  --code-bg: #0b0c0d;
+  --code-text: #FAF6F1;
+}
+
+.palette-rose {
+  /* Rose: muted plum/rose palette for a tasteful accent */
+  --bg: #0f0c12;
+  --text: #F2E9EF;
+  --muted: #C6B8C1;
+  --accent: #B86B9B;
+  --link: #D49EC7;
+  --code-bg: #0b0910;
+  --code-text: #F7EEF7;
+}
+
+html {
+  font-size: 16px; /* base for rem calculations */
+}
+
+.responsive-content {
+  /* Narrow content width to match a tighter, magazine-like measure similar
+     to the example site. This gives images and text blocks comparable widths. */
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+@media (max-width: 1350px) {
+  .responsive-content {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+.responsive-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ .post-preview time {
+  display: inline-block;
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* Tag 'bubble' pills under each post. Prevent tags from breaking across lines
+   so a single tag will always move to the next line instead of splitting and
+   showing a rounded corner half-way down the line. */
+.post-preview .label {
+  display: inline-block;
+  white-space: nowrap; /* keep the tag text on one line */
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px; /* pill */
+  background: rgba(255,255,255,0.04);
+  color: var(--muted);
+  margin-right: 0.4rem;
+  line-height: 1;
+}
+.post-preview .label small { font-size: 0.85rem; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+ .flex-wrapper {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -22,6 +141,163 @@
 }
  /* / This is necessary because of rst injecting a border when it builds table */
 
+/* styling for small stats grid tables generated in posts (no visible borders) */
+.responsive-content table.stats-grid,
+.responsive-content table.stats-grid th,
+.responsive-content table.stats-grid td {
+  border: none;
+}
+.responsive-content table.stats-grid {
+  border-collapse: separate;
+  border-spacing: 0 0.4rem; /* vertical spacing between rows */
+  margin: 0 0 1.0rem 0;
+}
+.responsive-content table.stats-grid td {
+  padding: 0.15rem 0.6rem;
+  vertical-align: middle;
+}
+.responsive-content table.stats-grid td:first-child {
+  font-weight: 700;
+  width: 32%;
+}
+
+/* Many reStructuredText tables are emitted with class="docutils" and an inline
+   border attribute. Target those here and force borderless rendering so the
+   stats/grid tables don't show framed borders. */
+.responsive-content table.docutils,
+.responsive-content table.docutils th,
+.responsive-content table.docutils td {
+  border: none !important;
+}
+.responsive-content table.docutils {
+  border-collapse: separate;
+  border-spacing: 0 0.4rem;
+  margin: 0 0 1.0rem 0;
+}
+.responsive-content table.docutils td {
+  padding: 0.15rem 0.6rem;
+  vertical-align: middle;
+}
+.responsive-content table.docutils td:first-child {
+  font-weight: 700;
+}
+
+/* Inline gallery carousel sizing and control colors */
+.inline-gallery-carousel .carousel-inner .item img {
+  max-height: 360px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  object-fit: cover;
+}
+.inline-gallery-carousel .carousel-control .glyphicon {
+  color: var(--text);
+}
+
+/* Polished inline/photo gallery styles */
+.pswp-gallery {
+  margin-bottom: 1rem;
+}
+.pswp-gallery .col-xs-12,
+.pswp-gallery .col-xs-6,
+.pswp-gallery .col-xs-4 {
+  padding: 0.45rem; /* gutter between tiles */
+}
+.pswp-gallery a {
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.pswp-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 240ms ease, box-shadow 240ms ease;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.pswp-gallery img:hover,
+.pswp-gallery a:focus img {
+  transform: scale(1.03);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.45);
+}
+.pswp-gallery a:focus {
+  outline: 3px solid rgba(255,255,255,0.06);
+  outline-offset: 3px;
+}
+
+/* Make single-image gallery slightly larger and centered */
+.pswp-gallery .col-xs-12 img {
+  max-height: 420px;
+}
+
+@media (max-width: 767px) {
+  .pswp-gallery .col-xs-6,
+  .pswp-gallery .col-xs-4 {
+    padding: 0.35rem;
+  }
+}
+
+/* Make index thumbnails use the same rounded + hover-zoom treatment as galleries */
+.post-preview .row a.post-thumb {
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.post-preview .row a.post-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  transition: transform 240ms ease, box-shadow 240ms ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.30);
+}
+.post-preview .row a.post-thumb:hover img,
+.post-preview .row a.post-thumb:focus img {
+  transform: scale(1.03);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.45);
+}
+
+/* Tags page: tag-cloud styling */
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.6rem;
+}
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.03);
+  color: var(--link);
+  text-decoration: none;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background 160ms ease, transform 160ms ease;
+}
+.tag-pill:hover,
+.tag-pill:focus {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+.tag-pill .tag-name { margin-right: 0.5rem; }
+.tag-pill .tag-count {
+  display: inline-block;
+  background: rgba(255,255,255,0.04);
+  color: var(--muted);
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .tag-pill { padding: 0.25rem 0.45rem; font-size: 0.95rem; }
+  .tag-pill .tag-count { font-size: 0.8rem; }
+}
+
 .navbar {
   color:#404040;
 }
@@ -35,72 +311,114 @@ article {
   margin-top: -30px;
 }
 
+/* Typography and color updates for Option A (warm, comfortable) */
 body {
-  font-family: 'Open Sans', 'Lora','Times New Roman',serif;
-  font-size: 22px;
-  font-weight: 400;
-  color: #004E89;
-  background: #EFEFD0;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  /* Adjusted base text size per request */
+  font-size: 1.4rem; /* lowered from 1.9rem */
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--text);
+  background: var(--bg);
 }
-.ana-purple{
-  background: #6327c4;
-  color:#e2e0e0
+
+.responsive-content article {
+  /* Slightly narrower measure for comfortable line length */
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
 }
-.powder-blue{
-  background: powderblue;
-  color:#111111
+.responsive-content p {
+  font-size: 1.3rem; 
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 300;
 }
-.lime-olive{
-  background: #808000;
-  color:#cccccc
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 1rem; /* 16px smaller on small screens */
+  }
+  .responsive-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 }
-.aquamarine{
-  background: aquamarine ;
-  color:#111111
+
+.ana-purple {
+  background: #3a1766;      /* Darker purple */
+  color: #EFEFD0;
 }
-.light-sky-blue{
-  background: lightskyblue ;
-  color:#111111
+.powder-blue {
+  background: #2a3b4d;      /* Dark powder blue */
+  color: #EFEFD0;
 }
-p {
-  line-height: 1.5;
-  margin: 30px 0;
+.lime-olive {
+  background: #4d5c2a;      /* Dark olive */
+  color: #EFEFD0;
 }
-p a {
-  text-decoration: underline;
+.aquamarine {
+  background: #1a4747;      /* Dark aquamarine */
+  color: #EFEFD0;
 }
+.light-sky-blue {
+  background: #23395d;      /* Dark sky blue */
+  color: #EFEFD0;
+}
+
+h1 {
+  color: var(--accent);           /* Accent orange */
+}
+
+/* Display headers with an old-timey, wide serif (western feel) */
 h1,
-h2,
+h2 {
+  font-family: 'Caprasimo', Georgia, serif;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Ultra', Arial, sans-serif;
-  font-weight: 400;
+  font-family: 'Source Sans 3', 'Inter', Arial, sans-serif;
+  font-weight: 600;
+  color: var(--accent);
 }
+
 a {
-  color: #1A659E;
+  color: var(--link);           /* Lighter accent for links */
 }
 a:hover,
 a:focus {
-  color: #0085a1;
+  color: var(--accent);
 }
-a img:hover,
-a img:focus {
-  cursor: zoom-in;
-}
+
 blockquote {
-  color: #004E89;
+  color: #F7C59F;
   font-style: italic;
 }
+
 pre {
   background-color: transparent;
 }
+/* Code block visual tuning: reduce contrast and add padding/border-radius */
+pre[class*="language"],
+pre, code, .highlight, .highlight pre {
+  background: var(--code-bg) !important;
+  color: var(--code-text) !important;
+  border: 1px solid rgba(255,255,255,0.04) !important;
+  border-radius: 6px;
+  padding: 0.75rem !important;
+}
+pre code { background: transparent !important; }
 hr.small {
   max-width: 100px;
   margin: 15px auto;
   border-width: 4px;
-  border-color: #004E89;
+  border-color: #FF6B35;
 }
 .navbar-custom {
   position: absolute;
@@ -115,7 +433,7 @@ hr.small {
 }
 .navbar-custom .nav li a {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.75rem; /* 12px */
   font-weight: 800;
   letter-spacing: 1px;
   color:#004E89;
@@ -127,7 +445,7 @@ hr.small {
 
 @media only screen and (max-width: 480px) {
   body {
-    font-size: 16px; /* Adjust the font size as needed */
+    font-size: 1rem; /* 16px */
   }
 }
 @media only screen and (min-width: 768px) {
@@ -233,7 +551,7 @@ hr.small {
 } */
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
-  font-size: 24px;
+  font-size: 1.5rem; /* 24px */
   line-height: 1.1;
 			display: block;
   font-family: 'Open Sans', Arial, sans-serif;
@@ -243,7 +561,7 @@ hr.small {
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 80px;
+    font-size: 5rem; /* 80px */
   }
 }
 
@@ -254,7 +572,7 @@ hr.small {
 }
 .intro-header .post-heading .subheading {
   font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem; /* 24px */
   margin: 10px 0 30px;
   font-weight: 600;
 }
@@ -262,32 +580,31 @@ hr.small {
   font-family: 'Times New Roman', serif;
   font-style: italic;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1.25rem; /* 20px */
 }
 .intro-header .post-heading .meta a {
   color: #F7C59F;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .post-heading h1 {
-    font-size: 55px;
+    font-size: 3.4375rem; /* 55px */
   }
   .intro-header .post-heading .subheading {
-    font-size: 30px;
+    font-size: 1.875rem; /* 30px */
   }
 }
 .post-preview{
   margin-bottom:50px;
 }
 .post-preview > a {
-  color: #004E89;
+  color: #F7C59F;
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
-  text-decoration: none;
-  color: #0085a1;
+  color: #FF6B35;
 }
 .post-preview > a > .post-title {
-  font-size: 30px;
+  font-size: 1.875rem; /* 30px */
   margin-top: 30px;
   margin-bottom: 10px;
 }
@@ -297,8 +614,8 @@ hr.small {
   margin-bottom: 10px;
 }
 .post-preview > .post-meta {
-  color: #808080;
-  font-size: 18px;
+  color: #F7C59F;
+  font-size: 1.125rem; /* 18px */
   font-style: italic;
   margin-top: 0;
 }
@@ -313,17 +630,17 @@ hr.small {
 }
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
-    font-size: 36px;
+    font-size: 2.25rem; /* 36px */
   }
 }
 .section-heading {
-  font-size: 36px;
+  font-size: 2.25rem; /* 36px */
   margin-top: 60px;
   font-weight: 700;
 }
 .caption {
   text-align: center;
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px */
   padding: 10px;
   font-style: italic;
   margin: 0;
@@ -333,18 +650,20 @@ hr.small {
 }
 footer {
   padding: 50px 0 65px;
+  background: #232323;
+  color: #EFEFD0;
 }
 footer .list-inline {
   margin: 0;
   padding: 0;
 }
 footer .copyright {
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px */
   text-align: center;
   margin-bottom: 0;
 }
 .floating-label-form-group {
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px */
   position: relative;
   margin-bottom: 0;
   padding-bottom: 0.5em;
@@ -371,8 +690,6 @@ footer .copyright {
   margin: 0;
   font-size: 0.85em;
   line-height: 1.764705882em;
-  vertical-align: middle;
-  vertical-align: baseline;
   opacity: 0;
   -webkit-transition: top 0.3s ease,opacity 0.3s ease;
   -moz-transition: top 0.3s ease,opacity 0.3s ease;
@@ -396,14 +713,14 @@ form .row:first-child .floating-label-form-group {
 .btn {
   font-family: 'Open Sans', Arial, sans-serif;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px */
   font-weight: 800;
   letter-spacing: 1px;
   border-radius: 0;
   padding: 15px 25px;
 }
 .btn-lg {
-  font-size: 16px;
+  font-size: 1rem; /* 16px */
   padding: 25px 35px;
 }
 .btn-default:hover,
@@ -419,7 +736,7 @@ form .row:first-child .floating-label-form-group {
 .pager li > span {
   font-family: 'Open Sans', Arial, sans-serif;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px */
   font-weight: 800;
   letter-spacing: 1px;
   padding: 15px 25px;
@@ -459,7 +776,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #0085a1;
+  -webkit-tap-highlight-color: #0085a1;
 }
 .gallery .col-xs-1,
 .col-sm-1,
@@ -510,4 +827,63 @@ body {
 .col-md-12,
 .col-lg-12 {
  padding-bottom: 15px;
+}
+
+/* Feature image (bleeding header) and compact post meta/blurb */
+.post-feature {
+  margin: 0 0 1.25rem 0;
+  /* Pull the feature image outside the content padding so it 'bleeds' visually
+     to the edges of the responsive content column. The responsive-content
+     container uses 25px side padding, so we offset by that amount here. */
+  margin-left: -25px;
+  margin-right: -25px;
+}
+.post-feature img {
+  display: block;
+  width: calc(100% + 50px);
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.45);
+}
+
+.post-heading { margin-top: 0.75rem; }
+.post-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+}
+.post-meta-row time {
+  display: inline-block;
+  background: rgba(255,255,255,0.02);
+  color: var(--muted);
+  padding: 0.18rem 0.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.post-tags-inline { display: flex; gap: 0.5rem; align-items: center; }
+.tag-pill.small {
+  padding: 0.22rem 0.5rem;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.02);
+  color: var(--link);
+}
+.post-date-context {
+  margin: 0 0 0.8rem 0;
+  color: var(--muted);
+  opacity: 0.9;
+  font-size: 0.98rem;
+}
+.post-date-context time {
+  color: inherit;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .post-feature { margin-left: -15px; margin-right: -15px; }
+  .post-feature img { width: calc(100% + 30px); }
+  .post-meta-row { gap: 0.5rem; }
 }

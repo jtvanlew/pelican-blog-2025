@@ -2,7 +2,7 @@ Seoul food
 ##########
 
 :description: "walking through my stomach's tour of Seoul"
-:category: travel
+:tags: travel, food, south korea
 :image: {filename}../images/DSC_0828.jpg
 
 

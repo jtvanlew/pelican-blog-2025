@@ -2,8 +2,7 @@
 #####################
 
 :date: 2025-02-07
-:category: Bike Camping
-:tags: Catalina Island, California
+:tags: Catalina Island, California, Bike Camping, Bikes
 :gallery: {photo}2025/02-07-Catalina/pt0, {photo}2025/02-07-Catalina/pt1, {photo}2025/02-07-Catalina/pt2, {photo}2025/02-07-Catalina/pt3, {photo}2025/02-07-Catalina/pt4, {photo}2025/02-07-Catalina/pt5
 :image: {photo}2025/02-07-Catalina/pt3/dscf9961_v1.jpg
 

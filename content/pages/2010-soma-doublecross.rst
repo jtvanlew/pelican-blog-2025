@@ -3,7 +3,7 @@
 
 :date: 2010-08-31
 :bike: True
-:image: ../images/IMG_9552.JPG
+:image: {filename}../images/IMG_9552.JPG
 :make: SOMA
 :year: 2010
 :model: DoubleCross

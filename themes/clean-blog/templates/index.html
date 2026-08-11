@@ -17,25 +17,40 @@
     
     <div class="row">
         {% for article in (articles_page.object_list if articles_page else articles) %}
+            {% set article_modified = article.modified if article.modified is defined else None %}
+            {% set is_updated = article_modified and article_modified != article.date %}
             <div class="col-lg-4 col-sm-12">
                 <div class="post-preview">
                     {% if article.photo_image %}
                     <div class="row">
                         <div class="text-center">
-                        <a href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive center-block" src="{{ SITEURL }}/{{ article.photo_image[2] }}"/></a>
+                        <a class="post-thumb" href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive center-block" src="{{ SITEURL }}/{{ article.photo_image[2] }}"/></a>
                         </div>
                     </div>
                     {% elif article.image %}
                     <div class="row">
-                        <a href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive center-block" src="{{ SITEURL }}/{{ article.image }}"/></a>
+                        <a class="post-thumb" href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive center-block" src="{{ SITEURL }}/{{ article.image }}"/></a>
                     </div>
                     {% else %}
                     <div class="row">
-                        <a href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive center-block" src="{{ SITEURL }}/images/vanlew_profile_blank_post.jpg"/></a>
+                        <a class="post-thumb" href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive center-block" src="{{ SITEURL }}/images/vanlew_profile_blank_post.jpg"/></a>
                     </div>
                     {% endif %}
                     <div class="row">
-                        <a href="{{ SITEURL }}/{{ article.category.url }}"><small>{{ article.category }}</small></a>
+                        <!-- Category link example (commented out) -->
+                        <!-- <a href="{{ SITEURL }}/{{ article.category.url }}"><small>{{ article.category }}</small></a> -->
+
+                        {# Tags loop #}
+                        {% if article.tags %}
+                            <div>
+                                {% for tag in article.tags %}
+                                    <a href="{{ SITEURL }}/{{ tag.url }}" class="label label-default">
+                                        <small>{{ tag.name }}</small>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
                         <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
                             <h3 class="post-title">
                                 {{ article.title }}
@@ -43,7 +58,11 @@
                         </a>
                         <div class="summary">{{ article.summary|striptags }}<a href="{{ SITEURL }}/{{ article.url }}"> Read more ...</a>
                         </div>
+                        {% if is_updated %}
+                        <time datetime="{{ article_modified.isoformat() }}"> <small>{{ article.locale_modified if article.locale_modified is defined else article_modified.strftime('%Y-%m-%d') }} (updated)</small></time>
+                        {% else %}
                         <time datetime="{{ article.date.isoformat() }}"> <small>{{ article.locale_date }} </small></time>
+                        {% endif %}
                     </div>
                 </div>
             </div>

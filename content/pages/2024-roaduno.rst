@@ -4,21 +4,24 @@
 :date: 2024-07-12
 :bgcolor: ana-purple
 :bike: True
-:image: ../images/DSCQ0022.JPG
+:image: {filename}../images/DSC_0003.JPG
 :make: Rivendell
 :year: 2024
 :model: Roaduno
 :service_years: 2024-Present
 :condition: Local tool-around-er
 :shop: Rivendell Bicycle Works, Walnut Creek, CA
+:gallery: {photo}Bikes/Roaduno
 
-.. image:: ../images/DSCQ0022.JPG
+.. image:: ../images/DSC_0003.JPG
    :alt: 2024 Rivendell Roaduno
    :class: img-responsive
 
 
 The bike
 --------
+
+gallery::{photo}Bikes/Roaduno
 
 Build Details
 -------------

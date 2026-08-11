@@ -2,7 +2,7 @@ Surly 29er to 650ber
 ####################
 
 :description: The process of converting the Surly Ogre from a run-of-the-mill 29er to a beautiful 650b princess
-:category: bikes
+:tags: bikes, surly
 :image: {filename}../images/IMG_0941.jpg
 
 Chapter 1: The Brompton Beginnings

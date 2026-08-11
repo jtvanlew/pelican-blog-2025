@@ -6,6 +6,10 @@ My bikes
 :date: 2025-03-16
 :root: True
 
+.. _bike-history:
+
+Some Boring History of My Love of Bikes
+=======================================
 
 And I quote:
 
@@ -13,15 +17,13 @@ And I quote:
 
    Bill Walton
 
-
-
 I've had a handful of badass bikes in the last 20+ years. The first in my adult life was a Peugeot 10-speed I got from my neighbor in Chandler. I rode all around Tucson with almost no maintenance for almost 10 years. What else could you ever need besides tooling around on a beat up old steel bike with drop bars and skinny tires? 
 
-.. figure:: ../images/P6100018.JPG
+.. figure:: ../images/bikes_002.jpg
    :alt: Peugeot 10-speed
    :class: img-responsive
 
-   Peugeot in 2003, unceremoniously chained up out front of my house in Tucson alongside some random piece of crap bike on my super sweet Honda Shadow cruiser. Complete with rotting bar tape and suicide brake levers that I nevertheless rode every day and with great love.
+   Peugeot in 2003(?), proud of my work installing fenders and replacing some brake + shifter cables/housing and handlebar grips.
 
 Then sometime in the late 00s, I found myself looking at Rivendell Albatross handlebars. I probably visited the store page a dozen times over several months. I remember being in Taiwan for the first time ever and borrowing Cindy's laptop to look one more time and build up the nerve to buy them. For one thing, I think they were $80 at the time? Don't remember but to me it was an insane amount of money for a single part of a bike. Moreover, I would need to get new brake levers, shifters, probably a stem (I didn't even know what kind of stem I had on the Peugeot)? grips? what the heck?
 

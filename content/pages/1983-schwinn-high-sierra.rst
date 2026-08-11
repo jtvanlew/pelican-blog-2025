@@ -4,7 +4,7 @@
 :date: 2020-04-07
 :bike: True
 :bgcolor: powder-blue
-:image: ../images/DSC_0011.jpg
+:image: {filename}../images/DSC_0011.jpg
 :make: Schwinn
 :year: 1983
 :model: High Sierra

@@ -2,8 +2,7 @@
 ###############
 
 :date: 2023-05-13
-:category: Bike Camping
-:tags: Henry Coe, California
+:tags: Henry Coe, California, Bike Camping, Bikes
 :gallery: {photo}2023/05-13-HenryCoeBikeCamping/pt0, {photo}2023/05-13-HenryCoeBikeCamping/pt1, {photo}2023/05-13-HenryCoeBikeCamping/pt2, {photo}2023/05-13-HenryCoeBikeCamping/pt3
 :image: {photo}2023/05-13-HenryCoeBikeCamping/pt2/IMG_9371.jpg
 

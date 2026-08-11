@@ -1,7 +1,7 @@
 Fit check for rear tires in SOMA Double Cross
 #############################################
 
-:category: bikes
+:tags: bikes, soma
 :title: SOMA Double Cross Tire Sizing
 :status: draft
 

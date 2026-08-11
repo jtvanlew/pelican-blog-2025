@@ -30,26 +30,60 @@
 
 {% block header %}
     <!-- Page Header -->
+    {# Feature image (bleed) if provided #}
+    {% if article.header_cover %}
+    <div class="post-feature">
+        <img src="{{ SITEURL }}/{{ article.header_cover }}" alt="{{ article.title|e }}" class="img-responsive" />
+    </div>
+    {% endif %}
+
     <div class="post-heading">
         <h1>{{ article.title }}</h1>
-        {% if article.headline %}
-            <h3 class="subheading">{{ article.headline }}</h3>
-        {% endif %}
-        <span class="meta">Posted by
-            {% for author in article.authors %}
-                <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-            {% endfor %}
-                on {{ article.locale_date }}
-        </span>
-        {% import 'translations.html' as translations with context %}
-        {{ translations.translations_for(article) }}
+                {% set article_modified = article.modified if article.modified is defined else None %}
+                {% set is_updated = article_modified and article_modified != article.date %}
+
+        {# meta row: date and tags #}
+        <div class="post-meta-row">
+                    {% if is_updated %}
+                    <time datetime="{{ article_modified.isoformat() }}">Updated {{ article.locale_modified if article.locale_modified is defined else article_modified.strftime('%Y-%m-%d') }}</time>
+                    {% else %}
+                    <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                    {% endif %}
+          {% if article.tags %}
+            <div class="post-tags-inline">
+              {% for tag in article.tags %}
+                <a href="{{ SITEURL }}/{{ tag.url }}" class="tag-pill small"><span class="tag-name">{{ tag.name }}</span></a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+                {% if is_updated %}
+                <p class="post-date-context">
+                    Originally published <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                    and updated <time datetime="{{ article_modified.isoformat() }}">{{ article.locale_modified if article.locale_modified is defined else article_modified.strftime('%Y-%m-%d') }}</time>.
+                </p>
+                {% endif %}
+
+                {% if article.headline %}
+                        <h3 class="subheading">{{ article.headline }}</h3>
+                {% endif %}
+
+                {# short blurb/summary beneath the header for quick context #}
+                {% if article.summary %}
+                    <p class="lead blurb">{{ article.summary|striptags }}</p>
+                {% endif %}
+
+                {% import 'translations.html' as translations with context %}
+                {{ translations.translations_for(article) }}
     </div>
 
 {% endblock header %}
 
 {% block content %}
     <!-- Post Content -->
-    <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+    <!-- <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1"> -->
+    <div class="responsive-content">
     <article>
         {{ article.content }}
 

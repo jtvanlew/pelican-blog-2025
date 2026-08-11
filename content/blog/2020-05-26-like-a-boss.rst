@@ -1,7 +1,7 @@
 KCRW "champion" of the "world"
 ##############################
 
-:category: Random
+:tags: kcrw
 :image: {filename}../images/kcrwchamp!.png
 
 Basically the next Ken Jennings

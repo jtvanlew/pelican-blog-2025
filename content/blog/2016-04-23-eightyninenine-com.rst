@@ -1,8 +1,8 @@
 Eighty Nine Nine.com
 ####################
 
-:category: Random
-:image: ../images/kcrw_logo.png
+:tags: kcrw, data, music
+:image: {filename}../images/kcrw_logo.png
 
 A KCRW Data Site
 ================

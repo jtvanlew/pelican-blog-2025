@@ -14,11 +14,22 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <ul>
-    {% for category, articles in categories %}
-        <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
-    {% endfor %}
-    </ul>
+            <div class="row">
+            {% for category, articles in categories %}
+                <div class="col-md-4 col-sm-6">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                        <a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
+                      </h3>
+                    </div>
+                    <div class="panel-body">
+                      {{ articles|length }} posts
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}
+            </div>
         </div>
     </div>
 </div>

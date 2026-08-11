@@ -1,25 +1,72 @@
 {% macro gallery(title, gallery, default_caption) -%}
 <div class="row">
-    <div class="pswp-gallery" id="my-gallery">
+    <div class="pswp-gallery">
     {% if title | trim %}<h2>{{ title }}</h2>{% endif %}
+    {# determine layout class based on number of images #}
+    {% set n = gallery|length %}
+    {% if n == 1 %}
+        {% set col_class = 'col-xs-12' %}
+    {% elif n == 2 %}
+        {% set col_class = 'col-xs-6' %}
+    {% elif n == 3 %}
+        {% set col_class = 'col-xs-4' %}
+    {% else %}
+        {# keep existing behaviour for 4+ images (two-up) #}
+        {% set col_class = 'col-xs-6' %}
+    {% endif %}
+
     {% for name, photo, thumb, exif, caption in gallery %}
-        <div class="col-md-6 col-sm-12">
-            <a 
-            href="{{ SITEURL }}/{{ photo }}"
-            data-pswp-width="{{ photo.width }}" 
-            data-pswp-height="{{ photo.height }}" 
-            data-cropped="true" 
-            target="_blank">
-            <img
+    {% if exif|length %}
+        {% if exif[0]|float > 1 %}
+            <div class="{{ col_class }}">
+                <a
+                    href="{{ SITEURL }}/{{ photo }}"
+                    data-pswp-width="{{ photo.width }}"
+                    data-pswp-height="{{ photo.height }}"
+                    data-cropped="true"
+                    target="_blank">
+                    <img
+                        src="{{ SITEURL }}/{{ photo }}"
+                        class="img-responsive"
+                        alt="{{ caption | default(default_caption, true)|e }}"
+                        height="{{ photo.height }}"
+                        width="{{ photo.width }}" />
+                </a>
+            </div>
+        {% else %}
+            <div class="{{ col_class }}">
+                <a
+                    href="{{ SITEURL }}/{{ photo }}"
+                    data-pswp-width="{{ photo.width }}"
+                    data-pswp-height="{{ photo.height }}"
+                    data-cropped="true"
+                    target="_blank">
+                    <img
+                        src="{{ SITEURL }}/{{ thumb }}"
+                        class="img-responsive"
+                        alt="{{ caption | default(default_caption, true)|e }}"
+                        height="{{ thumb.height }}"
+                        width="{{ thumb.width }}" />
+                </a>
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="{{ col_class }}">
+            <a
+                href="{{ SITEURL }}/{{ photo }}"
+                data-pswp-width="{{ photo.width }}"
+                data-pswp-height="{{ photo.height }}"
+                data-cropped="true"
+                target="_blank">
+                <img
                     src="{{ SITEURL }}/{{ thumb }}"
                     class="img-responsive"
                     alt="{{ caption | default(default_caption, true)|e }}"
                     height="{{ thumb.height }}"
-                    width="{{ thumb.width }}"
-
-                />
+                    width="{{ thumb.width }}" />
             </a>
         </div>
+    {% endif %}
     {% endfor %}
     </div>
 </div>

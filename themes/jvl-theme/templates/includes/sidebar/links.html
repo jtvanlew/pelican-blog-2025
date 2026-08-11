@@ -1,0 +1,12 @@
+{% if LINKS %}
+  {% from 'includes/sidebar/macros.jinja' import title %}
+
+<!-- Sidebar/Links -->
+
+    {% for name, link in LINKS %}
+    <li>
+      <a href="{{ link }}" target="_blank">{{ name }}<i class="fa fa-external-link"></i></a> 
+    </li>
+    {% endfor %}
+<!-- End Sidebar/Links -->
+{% endif %}

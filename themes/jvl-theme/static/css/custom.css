@@ -1,0 +1,169 @@
+/* Add here all your css styles (customizations) */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+
+.footer-text{
+  font-size: .7em;
+}
+
+.highlight pre{
+  background-color: #333;
+  color: #f8f8f2;
+  border-radius: 0px;
+}
+
+
+/* set width and height for items */
+.cbp-l-grid-projects .cbp-item {
+    /* @editable properties */
+    width: 50px;
+    height: 250px;
+}
+
+.profile .panel-profile-social{
+  border: none;
+  margin-bottom: 0;
+  box-shadow: none;
+  margin-top: 20px;
+}
+
+.profile-circle {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 1em auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+/*  -moz-border-radius: 99em;
+*/  border-radius: 99em;
+  border: 5px solid #eee;
+}
+
+/*.large {
+  width: 300px;
+  height: 300px;
+}*/
+
+
+body{
+	font-size: 16px;
+}
+
+.skill-title{
+  font-size: 18px;
+}
+
+.panel-title{
+	font-size: 24px;
+}
+
+h1, h2{
+	font-family: 'Pathway Gothic One', sans-serif;
+}
+
+h2{
+  font-size:36px;
+}
+
+.bibbase_paper_author{
+  display: block;
+  /*font-size: 1.1em;*/
+}
+.bibbase_paper_title a{
+	font-weight: bold;
+}
+/*span.dontprint img {
+    display: none !important;
+}
+.bibbase_icon_text:before { 
+    font-family: FontAwesome;
+    content: "\f08e  link ";
+}*/
+
+
+#bibbase_header a {
+    text-decoration: none;
+}
+
+#bibbase_header i {
+    width: 16px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.bibbase_group {
+    /* background-color: #D0D0E0; */
+/*    background-color: none;*/
+    font-style: normal;
+    font-size: larger;
+    text-shadow: none;
+    padding: 5px 2px 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.bibbase_group_body {
+    margin-left: 20px;
+}
+
+
+img.bibbase_icon {
+    width: 20px;
+    max-height: 20px;
+    vertical-align: initial;
+    display: inline;
+
+    filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+    filter: grayscale(100%); /* Current draft standard */
+    -webkit-filter: grayscale(100%); /* New WebKit */
+/*    -moz-filter: grayscale(100%);*/    
+    -ms-filter: grayscale(100%); 
+    -o-filter: grayscale(100%);
+    /*filter: gray; /* IE6+ */
+}
+
+img.bibbase_icon:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+
+
+/* span.bibbase_icon_text { */
+/*     display: none; */
+/* } */
+
+.bibbase_code {
+    width: 80%
+}
+
+
+/* bootstrap */
+
+.bibbase_msg {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+#bibbase_embed_modal {
+    width: 70%;
+    left: 15%;
+    margin: 0;
+}
+
+.bibbase.well {
+    margin: 20px;
+    /*overflow-wrap: break-word;*/
+}
+
+.bibbase.link {
+    text-decoration: none;
+}
+
+.bibbase_paper_content {
+    font-size: smaller;
+}

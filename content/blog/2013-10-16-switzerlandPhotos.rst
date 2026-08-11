@@ -1,16 +1,18 @@
 Switzerland photos
 ##################
 
-:category: travel
+:date: 2013-10-16
+:modified: 2026-05-12
+:tags: travel, photography, switzerland
 :image: {filename}../images/10262232036_495e77c443_z.jpg
-
+:gallery: {photo}2013/09-20-Switzerland
+:gallery_sort: filename
+:summary: A few days in Switzerland following the ISFNT in Barcelona
 
 .. image:: ../images/10262232036_495e77c443_z.jpg
-   :alt: Swiss Alps
+   :alt: On top of Rothorn, near Brienz
    :class: img-responsive
 
-I'm pretty underwhelmed with many of the [pictures I took from Switzerland](https://www.flickr.com/photos/jtvanlew/sets/72157636528671866/), but they're up on flickr. This one *almost* faithfully recreates the majesty of the Alps. This was taken on top of Rothorn, near Brienz. 
+Rather than leaving this old guy with my flickr link, decided to process through this folder of photos again. Highlight of the trip was getting abandoned by our friends on the top of Rothorn. While they took the comfortable train back down to Brienz, Damien and I entered adventure mode with no choice but to dash down the mountain to catch the train. 
 
-I think the major issue I have with all my pictures is simply that its very, very hard for an image to represent how awesome the views are. How can a picture of a snow-capped peak give the feeling of the cool air, warm sun, and cold Swiss beer that you're absorbing at the same time? Well, I'm sure someone more talented than me can do it. As it is, I have these imposters that will just have to stand in for now.
-
-I've uploaded them all to flickr but did none of the color processing that I normally need to do. So they'll all seem grey and flat, but they're up.
+gallery::{photo}2013/09-20-Switzerland

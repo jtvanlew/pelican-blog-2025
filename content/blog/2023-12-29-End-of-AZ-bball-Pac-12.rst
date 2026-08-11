@@ -2,7 +2,7 @@ The Slow Death of Pac-12 Bball
 ###############################
 
 :date: 2023-12-29
-:category: Random
+:tags: Arizona Basketball, Pac-12
 :gallery: {photo}2023/12-29-AZBBall
 :image: {photo}2023/12-29-AZBBall/IMG_1006.jpg
 
