@@ -11,76 +11,45 @@
 {% endblock header %}
 
 {% block content %}
-<div class="row">
-<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+<div class="post-list">
     {% if articles %}
-    
-    <div class="row">
+    {# Cards flow into as many columns as fit: 3 on desktop, 2 on tablets,
+       1 on phones (see .post-grid in clean-blog.css). #}
+    <div class="post-grid">
         {% for article in (articles_page.object_list if articles_page else articles) %}
-            {% set article_modified = article.modified if article.modified is defined else None %}
-            {% set is_updated = article_modified and article_modified != article.date %}
-            <div class="col-lg-4 col-sm-12">
-                <div class="post-preview">
-                    {% if article.photo_image %}
-                    <div class="row">
-                        <div class="text-center">
-                        <a class="post-thumb" href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive center-block" src="{{ SITEURL }}/{{ article.photo_image[2] }}"/></a>
-                        </div>
-                    </div>
-                    {% elif article.image %}
-                    <div class="row">
-                        <a class="post-thumb" href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive center-block" src="{{ SITEURL }}/{{ article.image }}"/></a>
-                    </div>
-                    {% else %}
-                    <div class="row">
-                        <a class="post-thumb" href="{{ SITEURL }}/{{ article.url }}"><img class="img-responsive center-block" src="{{ SITEURL }}/images/vanlew_profile_blank_post.jpg"/></a>
+            {% if article.photo_image %}
+                {% set thumb = SITEURL ~ '/' ~ article.photo_image[2] %}
+            {% elif article.image %}
+                {% set thumb = SITEURL ~ '/' ~ article.image %}
+            {% else %}
+                {% set thumb = SITEURL ~ '/images/vanlew_profile_blank_post.jpg' %}
+            {% endif %}
+            <article class="post-preview">
+                <a class="post-thumb" href="{{ SITEURL }}/{{ article.url }}" tabindex="-1" aria-hidden="true">
+                    <img src="{{ thumb }}" alt="" width="600" height="600" loading="{{ 'eager' if loop.index <= 3 else 'lazy' }}" />
+                </a>
+                <div class="post-body">
+                    {% if article.tags %}
+                    <div class="post-tags">
+                        {% for tag in article.tags %}
+                            <a href="{{ SITEURL }}/{{ tag.url }}" class="label label-default"><small>{{ tag.name }}</small></a>
+                        {% endfor %}
                     </div>
                     {% endif %}
-                    <div class="row">
-                        <!-- Category link example (commented out) -->
-                        <!-- <a href="{{ SITEURL }}/{{ article.category.url }}"><small>{{ article.category }}</small></a> -->
 
-                        {# Tags loop #}
-                        {% if article.tags %}
-                            <div>
-                                {% for tag in article.tags %}
-                                    <a href="{{ SITEURL }}/{{ tag.url }}" class="label label-default">
-                                        <small>{{ tag.name }}</small>
-                                    </a>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
-
-                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
-                            <h3 class="post-title">
-                                {{ article.title }}
-                            </h3>
-                        </a>
-                        <div class="summary">{{ article.summary|striptags }}<a href="{{ SITEURL }}/{{ article.url }}"> Read more ...</a>
-                        </div>
-                        {% if is_updated %}
-                        <time datetime="{{ article_modified.isoformat() }}"> <small>{{ article.locale_modified if article.locale_modified is defined else article_modified.strftime('%Y-%m-%d') }} (updated)</small></time>
-                        {% else %}
-                        <time datetime="{{ article.date.isoformat() }}"> <small>{{ article.locale_date }} </small></time>
-                        {% endif %}
-                    </div>
+                    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">
+                        <h3 class="post-title">{{ article.title }}</h3>
+                    </a>
+                    <div class="summary">{{ article.summary|striptags }} <a href="{{ SITEURL }}/{{ article.url }}" class="read-more">Read more&nbsp;&rarr;</a></div>
+                    {# trip date; re-dated posts show it crossed out with the new date scribbled on #}
+                    {% with item = article %}{% include 'post_date.html' %}{% endwith %}
                 </div>
-            </div>
-            {% if loop.index % 3 == 0 %}
-            </div>
-            <div class="row">
-            {% endif %}
-            
+            </article>
         {% endfor %}
     </div>
+    {% endif %}
 
-    {% else %}
-    {%endif%}
-    
-    <div class="row">
-        {% include "pagination.html" %}
-    </div>
-</div>
+    {% include "pagination.html" %}
 </div>
 {% endblock content %}
 

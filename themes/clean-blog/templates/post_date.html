@@ -1,0 +1,13 @@
+{# Post date for cards and article headers. Expects `item` (an article).
+   A post whose :modified: falls on a different day than :date: (e.g. an old trip
+   written up years later) shows the original date crossed out with the new date
+   scribbled next to it. Same-day or no :modified: -> just the date. #}
+{% set mod = item.modified if item.modified is defined else None %}
+{% if mod and mod.date() != item.date.date() %}
+<span class="post-dates redated">
+    <time class="date-original" datetime="{{ item.date.isoformat() }}"><span class="sr-only">Trip date </span>{{ item.date.strftime('%d %B %Y') }}</time>
+    <time class="date-redated" datetime="{{ mod.isoformat() }}"><span class="sr-only">, posted </span>{{ mod.strftime('%b') }} {{ mod.day }}, {{ mod.year }}</time>
+</span>
+{% else %}
+<time datetime="{{ item.date.isoformat() }}">{{ item.date.strftime('%d %B %Y') }}</time>
+{% endif %}

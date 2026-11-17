@@ -1,7 +1,7 @@
 Surly Ogre
 ##########
 
-:tags: bikes, surly
+:tags: Bikes, Surly
 :image: {filename}../images/8422664932_4b86c69a23_z.jpg
 
 .. image:: ../images/8422664932_4b86c69a23_z.jpg

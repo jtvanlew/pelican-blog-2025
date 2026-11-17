@@ -7,6 +7,7 @@
 :make: SOMA
 :year: 2010
 :model: DoubleCross
+:photo_tag: SOMA
 :service_years: 2010-2024
 :condition: Semi-retired, built up beautifully and hanging in garage
 :shop: ABE Bikes, Tucson, AZ

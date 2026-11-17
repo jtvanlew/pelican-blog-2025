@@ -1,7 +1,8 @@
 // gallery-randomizer.js
-// Randomize row groupings for .pswp-gallery elements when they contain 5+ items.
-// Algorithm: generate a sequence of group sizes (1..4) that sum to N, preferring 2/3,
-// then assign bootstrap column classes accordingly (col-xs-12/6/4/3).
+// Randomize row groupings for .pswp-gallery elements (5+ items, or any with a
+// featured photo). Featured photos (.gallery-featured, from digiKam ratings) keep a
+// full-width row; the runs of other photos between them get a random sequence of
+// group sizes (1..4, preferring 2/3) as bootstrap column classes (col-xs-12/6/4/3).
 
 (function () {
   'use strict';
@@ -49,38 +50,55 @@
     return result;
   }
 
-  function applyPatternToGallery(gallery, pattern) {
-    // items are the direct child divs (each item wrapper)
-    var items = Array.prototype.slice.call(gallery.querySelectorAll(':scope > div'));
-    // remove existing col-* classes and apply new ones row by row
+  function setCols(el, col) {
+    // remove any col-xxx- classes, then add responsive ones
+    el.className = el.className.replace(/col-(xs|sm|md|lg)-\d+\b/g, '').trim();
+    el.classList.add('col-xs-' + col);
+    el.classList.add('col-sm-' + col);
+    el.classList.add('col-md-' + col);
+  }
+
+  function applyPattern(items, pattern) {
     var idx = 0;
     for (var r = 0; r < pattern.length; r++) {
       var group = pattern[r];
       var col = 12 / group; // integer for group in 1,2,3,4
-      for (var j = 0; j < group; j++) {
-        var el = items[idx];
-        if (!el) break;
-        // remove any col-xxx- classes (simple regex)
-        el.className = el.className.replace(/col-(xs|sm|md|lg)-\d+\b/g, '').trim();
-        // add new responsive classes
-        el.classList.add('col-xs-' + col);
-        el.classList.add('col-sm-' + col);
-        el.classList.add('col-md-' + col);
+      for (var j = 0; j < group && idx < items.length; j++) {
+        setCols(items[idx], col);
         idx++;
       }
     }
+  }
+
+  function patternFor(n) {
+    if (n === 4) return [2, 2];
+    return generatePattern(n);
   }
 
   function processGalleries() {
     var galleries = document.querySelectorAll('.pswp-gallery');
     galleries.forEach(function (g) {
       try {
-  var items = g.querySelectorAll(':scope > div');
-  // activate for galleries with 5 or more images
-  if (!items || items.length < 5) return;
-        var n = items.length;
-        var pattern = generatePattern(n);
-        applyPatternToGallery(g, pattern);
+        var items = Array.prototype.slice.call(g.querySelectorAll(':scope > div'));
+        var hasFeatured = items.some(function (el) { return el.classList.contains('gallery-featured'); });
+        // small galleries keep their server-side layout unless a photo is featured
+        if (items.length < 5 && !hasFeatured) return;
+        // Featured photos (digiKam rating) always get a full-width row of their own;
+        // shuffle the runs of ordinary photos between them.
+        var run = [];
+        var flush = function () {
+          if (run.length) applyPattern(run, patternFor(run.length));
+          run = [];
+        };
+        items.forEach(function (el) {
+          if (el.classList.contains('gallery-featured')) {
+            flush();
+            setCols(el, 12);
+          } else {
+            run.push(el);
+          }
+        });
+        flush();
       } catch (e) {
         // fail silently
         console && console.error && console.error('gallery-randomizer error', e);

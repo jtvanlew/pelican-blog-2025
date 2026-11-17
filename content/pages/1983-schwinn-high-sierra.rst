@@ -8,6 +8,7 @@
 :make: Schwinn
 :year: 1983
 :model: High Sierra
+:photo_tag: Schwinn
 :service_years: 2020-2025
 :condition: Donated to co-op
 :shop: Craigslist

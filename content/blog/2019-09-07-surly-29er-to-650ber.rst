@@ -2,7 +2,7 @@ Surly 29er to 650ber
 ####################
 
 :description: The process of converting the Surly Ogre from a run-of-the-mill 29er to a beautiful 650b princess
-:tags: bikes, surly
+:tags: Bikes, Surly
 :image: {filename}../images/IMG_0941.jpg
 
 Chapter 1: The Brompton Beginnings
@@ -100,8 +100,12 @@ So I was kind of unnecesary in the shop as Tom did everything. It boiled down to
    :alt: IMG_0918.jpg
    :class: img-responsive
 
-And some sick iphone slo-mo of the lathing in progress
-[![Lathing bolts](http://img.youtube.com/vi/9070vomJncw/0.jpg)](https://www.youtube.com/watch?v=9070vomJncw){class="img-responsive"}
+And some sick iphone slo-mo of the lathing in progress (click to play):
+
+.. image:: https://img.youtube.com/vi/9070vomJncw/0.jpg
+   :target: https://www.youtube.com/watch?v=9070vomJncw
+   :alt: Lathing bolts
+   :class: img-responsive
 
 Now, I don't want to disparage these cheap aluminum Chinese V-brake adapters because they really were my best option and were very inexpensive and moreover I wasn't using the adapters for their intended purpose, but in some of them, the posts didn't sit perfectly normal and there was some interference between the brake itself and the face of the adapter. This picture shows a pronounced interference before we took down more of the face of the bolt. On several of the brake arms I had to stick them into a grinder to provide a little more clearance. Two of the pads had no interference issues at all.
 

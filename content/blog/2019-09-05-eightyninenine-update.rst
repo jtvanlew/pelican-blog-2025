@@ -1,7 +1,7 @@
 Eighty Nine Nine.com UPDATE!
 ############################
 
-:tags: kcrw, data, music
+:tags: KCRW, Data, Music
 :image: {filename}../images/kcrw_logo.png
 
 D3 & speed upgrades to Eightyninenine.com

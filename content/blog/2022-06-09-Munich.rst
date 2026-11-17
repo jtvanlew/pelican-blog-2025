@@ -1,0 +1,75 @@
+Munich (2022-06-09)
+###################
+
+:date: 2022-06-09
+:tags: Germany, Munich, Travel
+:image: {photo}2022/06-09-Munich/20220611_090527_20220611_070527_5C74740E.jpg
+:gallery: {photo}2022/06-09-Munich
+:summary: TODO one-line summary of Munich
+:status: draft
+
+TODO: intro for Munich. Auto-generated draft from digiKam (217 photos, everything not marked Rejected).
+
+Day 1: Thu June 9, 2022 - Germany, Munich
+-----------------------------------------
+
+TODO (Germany, Munich, photos 1-2 of 2 this day): What was the plan for this part of the day?
+
+gallery::{photo}2022/06-09-Munich[0:2]
+
+Day 2: Fri June 10, 2022 - Germany, Munich
+------------------------------------------
+
+TODO (Germany, Munich, photos 1-14 of 14 this day): Where are we here, and how did we get there?
+
+gallery::{photo}2022/06-09-Munich[2:16]
+
+Day 3: Sat June 11, 2022 - Germany, Munich
+------------------------------------------
+
+TODO (Germany, Munich, photos 1-20 of 148 this day): Who was along for this stretch?
+
+gallery::{photo}2022/06-09-Munich[16:36]
+
+TODO (Germany, Munich, photos 21-40 of 148 this day): Best thing eaten or drunk around here?
+
+gallery::{photo}2022/06-09-Munich[36:56]
+
+TODO (Germany, Munich, photos 41-60 of 148 this day): Anything go sideways here?
+
+gallery::{photo}2022/06-09-Munich[56:76]
+
+TODO (Germany, Munich, photos 61-80 of 148 this day): What's the story behind these shots?
+
+gallery::{photo}2022/06-09-Munich[76:96]
+
+TODO (Germany, Munich, photos 81-100 of 148 this day): What did this place smell / sound like?
+
+gallery::{photo}2022/06-09-Munich[96:116]
+
+TODO (Germany, Munich, photos 101-120 of 148 this day): Something you'd tell a friend going here.
+
+gallery::{photo}2022/06-09-Munich[116:136]
+
+TODO (Germany, Munich, photos 121-140 of 148 this day): What was the plan for this part of the day?
+
+gallery::{photo}2022/06-09-Munich[136:156]
+
+TODO (Germany, Munich, photos 141-148 of 148 this day): Where are we here, and how did we get there?
+
+gallery::{photo}2022/06-09-Munich[156:164]
+
+Day 4: Sun June 12, 2022 - Germany, Munich
+------------------------------------------
+
+TODO (Germany, Munich, photos 1-20 of 53 this day): Who was along for this stretch?
+
+gallery::{photo}2022/06-09-Munich[164:184]
+
+TODO (Germany, Munich, photos 21-40 of 53 this day): Best thing eaten or drunk around here?
+
+gallery::{photo}2022/06-09-Munich[184:204]
+
+TODO (Germany, Munich, photos 41-53 of 53 this day): Anything go sideways here?
+
+gallery::{photo}2022/06-09-Munich[204:217]

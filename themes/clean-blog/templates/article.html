@@ -23,8 +23,12 @@
 	<meta property="article:author" content="{{ author }}">
 	<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}">
 	<meta property="og:title" content="{{ article.title }}">
-	<meta property="og:description" content="{{ article.headline }}">
+	<meta property="og:description" content="{{ (article.headline or article.summary)|striptags|truncate(200)|e }}">
+	{% if article.photo_image %}
+	<meta property="og:image" content="{{ SITEURL }}/{{ article.photo_image[1] }}">
+	{% elif article.header_cover %}
 	<meta property="og:image" content="{{ SITEURL }}/{{ article.header_cover }}">
+	{% endif %}
 	<meta property="article:published_time" content="{{ article.date }}">
 {% endblock %}
 
@@ -39,16 +43,9 @@
 
     <div class="post-heading">
         <h1>{{ article.title }}</h1>
-                {% set article_modified = article.modified if article.modified is defined else None %}
-                {% set is_updated = article_modified and article_modified != article.date %}
-
         {# meta row: date and tags #}
         <div class="post-meta-row">
-                    {% if is_updated %}
-                    <time datetime="{{ article_modified.isoformat() }}">Updated {{ article.locale_modified if article.locale_modified is defined else article_modified.strftime('%Y-%m-%d') }}</time>
-                    {% else %}
-                    <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
-                    {% endif %}
+                    {% with item = article %}{% include 'post_date.html' %}{% endwith %}
           {% if article.tags %}
             <div class="post-tags-inline">
               {% for tag in article.tags %}
@@ -58,19 +55,13 @@
           {% endif %}
         </div>
 
-                {% if is_updated %}
-                <p class="post-date-context">
-                    Originally published <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
-                    and updated <time datetime="{{ article_modified.isoformat() }}">{{ article.locale_modified if article.locale_modified is defined else article_modified.strftime('%Y-%m-%d') }}</time>.
-                </p>
-                {% endif %}
-
                 {% if article.headline %}
                         <h3 class="subheading">{{ article.headline }}</h3>
                 {% endif %}
 
-                {# short blurb/summary beneath the header for quick context #}
-                {% if article.summary %}
+                {# short blurb beneath the header, only for a hand-written :summary:
+                   (an auto summary is just the first paragraph, which follows right below) #}
+                {% if 'summary' in article.metadata %}
                     <p class="lead blurb">{{ article.summary|striptags }}</p>
                 {% endif %}
 
@@ -108,11 +99,6 @@
 
     </article>
     <hr class="small">
+    {% with item = article %}{% include 'comments_remark42.html' %}{% endwith %}
     </div>
-
-    {% if DISQUS_SITENAME and article.status != "draft" %}
-    <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-        <div id="disqus_thread"></div>
-    </div>
-    {% endif %}
 {% endblock content %}

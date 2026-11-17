@@ -1,0 +1,75 @@
+Taiwan (2018-03-18)
+###################
+
+:date: 2018-03-18
+:tags: Taiwan, Travel
+:image: {photo}2018/03-18-Taiwan/20180325_235154_DSC_0655.jpg
+:gallery: {photo}2018/03-18-Taiwan
+:summary: TODO one-line summary of Taiwan
+:status: draft
+
+TODO: intro for Taiwan. Auto-generated draft from digiKam (112 photos, everything not marked Rejected).
+
+Day 1: Mon March 19, 2018 - Taiwan
+----------------------------------
+
+TODO (Taiwan, photos 1-8 of 8 this day): What was the plan for this part of the day?
+
+gallery::{photo}2018/03-18-Taiwan[0:8]
+
+Day 2: Sun March 25, 2018 - Taiwan
+----------------------------------
+
+TODO (Taiwan, photos 1-20 of 33 this day): Where are we here, and how did we get there?
+
+gallery::{photo}2018/03-18-Taiwan[8:28]
+
+TODO (Taiwan, photos 21-33 of 33 this day): Who was along for this stretch?
+
+gallery::{photo}2018/03-18-Taiwan[28:41]
+
+Day 3: Mon March 26, 2018 - Taiwan
+----------------------------------
+
+TODO (Taiwan, photos 1-10 of 10 this day): Best thing eaten or drunk around here?
+
+gallery::{photo}2018/03-18-Taiwan[41:51]
+
+Day 4: Tue March 27, 2018 - Taiwan
+----------------------------------
+
+TODO (Taiwan, photos 1-21 of 21 this day): Anything go sideways here?
+
+gallery::{photo}2018/03-18-Taiwan[51:72]
+
+Day 5: Wed March 28, 2018 - Taiwan
+----------------------------------
+
+TODO (Taiwan, photos 1-1 of 1 this day): What's the story behind these shots?
+
+gallery::{photo}2018/03-18-Taiwan[72:73]
+
+Day 6: Thu March 29, 2018 - Taiwan
+----------------------------------
+
+TODO (Taiwan, photos 1-20 of 31 this day): What did this place smell / sound like?
+
+gallery::{photo}2018/03-18-Taiwan[73:93]
+
+TODO (Taiwan, photos 21-31 of 31 this day): Something you'd tell a friend going here.
+
+gallery::{photo}2018/03-18-Taiwan[93:104]
+
+Day 7: Fri March 30, 2018 - Taiwan
+----------------------------------
+
+TODO (Taiwan, photos 1-7 of 7 this day): What was the plan for this part of the day?
+
+gallery::{photo}2018/03-18-Taiwan[104:111]
+
+Day 8: Sat March 31, 2018 - Taiwan
+----------------------------------
+
+TODO (Taiwan, photos 1-1 of 1 this day): Where are we here, and how did we get there?
+
+gallery::{photo}2018/03-18-Taiwan[111:112]

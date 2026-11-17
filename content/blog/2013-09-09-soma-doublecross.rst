@@ -1,7 +1,7 @@
 Soma Double Cross
 #################
 
-:tags: bikes, soma
+:tags: Bikes, Soma
 :image: {filename}../images/7595650584_975b94fc31_z.jpg
 
 .. image:: ../images/7595650584_975b94fc31_z.jpg

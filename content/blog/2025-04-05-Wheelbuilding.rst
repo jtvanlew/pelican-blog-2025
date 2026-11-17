@@ -2,7 +2,7 @@ Wheelbuilding for the A. Homer H.
 #################################
 
 :date: 2025-04-05
-:tags: bikes, wheelbuilding, Rivendell
+:tags: Bikes, Wheelbuilding, Rivendell
 :gallery: {photo}2025/04-05-Wheelbuilding
 :image: {photo}2025/04-05-Wheelbuilding/DSCQ0032.JPG
 

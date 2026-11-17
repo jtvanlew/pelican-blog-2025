@@ -14,14 +14,14 @@
 {% if page.root == "True" %}
 
 <div class="row" style="margin-bottom: 40px;">
-    <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-        <a href="#bike-history" class="btn btn-link">Jump down to a short, boring history of my love of bikes</a>
+    <div class="col-md-8 col-md-offset-2 col-xs-12">
+        <a href="#bike-history" class="btn btn-link btn-wrap">Jump down to a short, boring history of my love of bikes</a>
 
         <h1>Bike Showroom</h1>
         <div class="row">
         {% for p in pages %}
             {% if p.bike == "True" %}
-            <div class="col-lg-4 col-sm-12">        
+            <div class="col-lg-4 col-xs-12">        
                 <h3>{{ p.make }}</h3>
                 <a href="{{ SITEURL }}/{{ p.url }}">{{ p.year }} {{ p.model }}</a>
                 <ul class="list-unstyled">
@@ -47,12 +47,36 @@
     <div class="responsive-content">
         <article>{{ page.content }}</article>
         <hr class="small">
+
+        {% if page.tagged_photos %}
+        <section class="tagged-photos">
+            <h2>Out on the road</h2>
+            <p class="text-muted">Every time the {{ page.model or page.title }} showed up in a post.</p>
+            {% for group in page.tagged_photos %}
+            <div class="tagged-photos-group">
+                <h3>
+                    <a href="{{ SITEURL }}/{{ group.content.url }}">{{ group.content.title }}</a>
+                    {% if group.content.date %}<small><time datetime="{{ group.content.date.isoformat() }}">{{ group.content.date.strftime('%b %Y') }}</time></small>{% endif %}
+                </h3>
+                <div class="tagged-photos-grid pswp-gallery">
+                    {% for photo in group.photos %}
+                    {% set caption = photo.caption.value if photo.caption else '' %}
+                    <a href="{{ SITEURL }}/{{ photo.image }}"
+                       data-pswp-width="{{ photo.image.width }}"
+                       data-pswp-height="{{ photo.image.height }}"
+                       target="_blank">
+                        <img src="{{ SITEURL }}/{{ photo.thumb }}"
+                             alt="{{ caption or (page.model ~ ' in ' ~ group.content.title) }}"
+                             width="{{ photo.thumb.width }}" height="{{ photo.thumb.height }}"
+                             loading="lazy" />
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+        {% endif %}
+        {% with item = page %}{% include 'comments_remark42.html' %}{% endwith %}
     </div>
 </div>
-
-{% if DISQUS_SITENAME and page.status != "draft" %}
-    <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-        <div id="disqus_thread"></div>
-    </div>
-    {% endif %}
 {% endblock content %}

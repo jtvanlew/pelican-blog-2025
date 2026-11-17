@@ -1,0 +1,53 @@
+Udine (VBC) (2019-11-09)
+########################
+
+:date: 2019-11-09
+:tags: Italy, Udine, Travel
+:image: {photo}2019/11-09-UdineVBC/20191113_090444_IMG_1633.jpg
+:gallery: {photo}2019/11-09-UdineVBC
+:summary: TODO one-line summary of Udine (VBC)
+:status: draft
+
+TODO: intro for Udine (VBC). Auto-generated draft from digiKam (64 photos, everything not marked Rejected).
+
+Day 1: Sat November 9, 2019 - Italy, Udine
+------------------------------------------
+
+TODO (Italy, Udine, photos 1-4 of 4 this day): What was the plan for this part of the day?
+
+gallery::{photo}2019/11-09-UdineVBC[0:4]
+
+Day 2: Sun November 10, 2019 - Italy, Udine
+-------------------------------------------
+
+TODO (Italy, Udine, photos 1-17 of 17 this day): Where are we here, and how did we get there?
+
+gallery::{photo}2019/11-09-UdineVBC[4:21]
+
+Day 3: Mon November 11, 2019 - Italy, Udine
+-------------------------------------------
+
+TODO (Italy, Udine, photos 1-2 of 2 this day): Who was along for this stretch?
+
+gallery::{photo}2019/11-09-UdineVBC[21:23]
+
+Day 4: Tue November 12, 2019 - Italy, Udine
+-------------------------------------------
+
+TODO (Italy, Udine, photos 1-7 of 7 this day): Best thing eaten or drunk around here?
+
+gallery::{photo}2019/11-09-UdineVBC[23:30]
+
+Day 5: Wed November 13, 2019 - Italy, Udine
+-------------------------------------------
+
+TODO (Italy, Udine, photos 1-16 of 16 this day): Anything go sideways here?
+
+gallery::{photo}2019/11-09-UdineVBC[30:46]
+
+Day 6: Thu November 14, 2019 - Italy, Udine
+-------------------------------------------
+
+TODO (Italy, Udine, photos 1-18 of 18 this day): What's the story behind these shots?
+
+gallery::{photo}2019/11-09-UdineVBC[46:64]

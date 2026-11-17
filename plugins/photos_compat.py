@@ -337,6 +337,20 @@ def _apply_photos_patches(_pelican):
             )
             raise photos_module.FileExcluded("Unsupported HEIC image format")
 
+        # Empty or zero-filled files (e.g. a cloud-sync placeholder that was
+        # copied before downloading) would otherwise abort the whole article.
+        try:
+            with open(filename, "rb") as fh:
+                head = fh.read(16)
+        except OSError:
+            head = b""
+        if not head or head == bytes(len(head)):
+            photos_module.logger.warning(
+                "photos: Skipping empty/corrupt image '%s'",
+                filename,
+            )
+            raise photos_module.FileExcluded("Empty or zero-filled image file")
+
         try:
             original_source_image_init(self, filename, *args, **kwargs)
         except photos_module.InternalError as exc:
@@ -365,7 +379,16 @@ def _apply_photos_patches(_pelican):
                 return None
             raise
 
+    # Gallery paths are built with os.path.join, which yields backslashes in
+    # URLs when building on Windows. Keep web paths forward-slashed.
+    original_image_init = photos_module.Image.__init__
+
+    def _image_init_compat(self, *args, **kwargs):
+        original_image_init(self, *args, **kwargs)
+        self.web_filename = self.web_filename.replace("\\", "/")
+
     photos_module.SourceImage.__init__ = _source_image_init_compat
+    photos_module.Image.__init__ = _image_init_compat
     photos_module.Image.process = _image_process_compat
     photos_module.Gallery.__init__ = (
         lambda self, content, location_parsed, profile_name=None, profile=None: _gallery_init_sorted_by_capture_time(
@@ -378,6 +401,82 @@ def _apply_photos_patches(_pelican):
         )
     )
     photos_pkg.Gallery = photos_module.Gallery
+
+    _add_rating_properties(photos_module)
+
+
+# --- digiKam star ratings -> featured (full-width) gallery photos -------------
+#
+# A gallery photo is "featured" when its rating is >= PHOTO_FEATURED_RATING.
+# Where the rating comes from, first match wins:
+#   1. ratings.txt in the gallery folder   ("photo.jpg: 4", written by
+#      tools/travel_backlog/export.py from the digiKam database)
+#   2. exif.txt in the gallery folder       (legacy: "photo.jpg: 2 - <date> - ...")
+#   3. an XMP sidecar next to the photo     (photo.jpg.xmp or photo.xmp)
+#   4. XMP embedded in the photo itself     (digiKam writes xmp:Rating there)
+
+_XMP_RATING = re.compile(rb"xmp:Rating(?:=\"|>)\s*(-?\d+)")
+
+
+@lru_cache(maxsize=512)
+def _folder_notes(folder, name):
+    notes = {}
+    try:
+        with open(os.path.join(folder, name), encoding="utf-8") as fh:
+            for line in fh:
+                if line.startswith("#") or ":" not in line:
+                    continue
+                pic, _, note = line.partition(":")
+                if pic.strip():
+                    notes[pic.strip()] = note.strip()
+    except OSError:
+        pass
+    return notes
+
+
+def _leading_int(text):
+    match = re.match(r"\s*(-?\d+)", text or "")
+    return int(match.group(1)) if match else None
+
+
+def _xmp_rating(path, max_bytes=None):
+    try:
+        with open(path, "rb") as fh:
+            data = fh.read(max_bytes) if max_bytes else fh.read()
+    except OSError:
+        return None
+    match = _XMP_RATING.search(data)
+    return int(match.group(1)) if match else None
+
+
+@lru_cache(maxsize=8192)
+def _photo_rating(path):
+    folder, pic = os.path.split(path)
+    for notes_file in ("ratings.txt", "exif.txt"):
+        rating = _leading_int(_folder_notes(folder, notes_file).get(pic))
+        if rating is not None:
+            return rating
+    for sidecar in (path + ".xmp", os.path.splitext(path)[0] + ".xmp"):
+        if os.path.isfile(sidecar):
+            rating = _xmp_rating(sidecar)
+            if rating is not None:
+                return rating
+    # Embedded XMP lives in the first APP segments of a JPEG.
+    return _xmp_rating(path, max_bytes=256 * 1024)
+
+
+def _add_rating_properties(photos_module):
+    def rating(self):
+        src = getattr(self, "src_filename", None)
+        return _photo_rating(os.path.normpath(src)) if src else None
+
+    def featured(self):
+        threshold = photos_module.pelican_settings.get("PHOTO_FEATURED_RATING")
+        value = self.rating
+        return bool(threshold) and value is not None and value >= threshold
+
+    photos_module.GalleryImage.rating = property(rating)
+    photos_module.GalleryImage.featured = property(featured)
 
 
 def register():

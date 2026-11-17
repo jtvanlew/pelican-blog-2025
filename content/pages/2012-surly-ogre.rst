@@ -8,6 +8,7 @@
 :make: Surly
 :year: 2012
 :model: Ogre
+:photo_tag: Ogre
 :service_years: 2012-2022
 :condition: Given to Steve
 :shop: Topanga Creek Bicycles, Topanga, CA

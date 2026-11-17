@@ -1,0 +1,89 @@
+Tibet (2010-05-16)
+##################
+
+:date: 2010-05-16
+:tags: China, Tibet, Travel
+:image: {photo}2010/05-16-Tibet/20100517_152300_20100517-DSC_0282.jpg
+:gallery: {photo}2010/05-16-Tibet
+:summary: TODO one-line summary of Tibet
+:status: draft
+
+TODO: intro for Tibet. Auto-generated draft from digiKam (249 photos, everything not marked Rejected).
+
+Day 1: Sun May 16, 2010 - China, Tibet
+--------------------------------------
+
+TODO (China, Tibet, photos 1-12 of 12 this day): What was the plan for this part of the day?
+
+gallery::{photo}2010/05-16-Tibet[0:12]
+
+Day 2: Mon May 17, 2010 - China, Tibet
+--------------------------------------
+
+TODO (China, Tibet, photos 1-20 of 90 this day): Where are we here, and how did we get there?
+
+gallery::{photo}2010/05-16-Tibet[12:32]
+
+TODO (China, Tibet, photos 21-40 of 90 this day): Who was along for this stretch?
+
+gallery::{photo}2010/05-16-Tibet[32:52]
+
+TODO (China, Tibet, photos 41-60 of 90 this day): Best thing eaten or drunk around here?
+
+gallery::{photo}2010/05-16-Tibet[52:72]
+
+TODO (China, Tibet, photos 61-80 of 90 this day): Anything go sideways here?
+
+gallery::{photo}2010/05-16-Tibet[72:92]
+
+TODO (China, Tibet, photos 81-90 of 90 this day): What's the story behind these shots?
+
+gallery::{photo}2010/05-16-Tibet[92:102]
+
+Day 3: Tue May 18, 2010 - China, Tibet
+--------------------------------------
+
+TODO (China, Tibet, photos 1-20 of 75 this day): What did this place smell / sound like?
+
+gallery::{photo}2010/05-16-Tibet[102:122]
+
+TODO (China, Tibet, photos 21-40 of 75 this day): Something you'd tell a friend going here.
+
+gallery::{photo}2010/05-16-Tibet[122:142]
+
+TODO (China, Tibet, photos 41-60 of 75 this day): What was the plan for this part of the day?
+
+gallery::{photo}2010/05-16-Tibet[142:162]
+
+TODO (China, Tibet, photos 61-75 of 75 this day): Where are we here, and how did we get there?
+
+gallery::{photo}2010/05-16-Tibet[162:177]
+
+Day 4: Wed May 19, 2010 - China, Tibet
+--------------------------------------
+
+TODO (China, Tibet, photos 1-20 of 54 this day): Who was along for this stretch?
+
+gallery::{photo}2010/05-16-Tibet[177:197]
+
+TODO (China, Tibet, photos 21-40 of 54 this day): Best thing eaten or drunk around here?
+
+gallery::{photo}2010/05-16-Tibet[197:217]
+
+TODO (China, Tibet, photos 41-54 of 54 this day): Anything go sideways here?
+
+gallery::{photo}2010/05-16-Tibet[217:231]
+
+Day 5: Thu May 20, 2010 - China, Tibet
+--------------------------------------
+
+TODO (China, Tibet, photos 1-17 of 17 this day): What's the story behind these shots?
+
+gallery::{photo}2010/05-16-Tibet[231:248]
+
+Day 6: Fri June 18, 2010 - China, Tibet
+---------------------------------------
+
+TODO (China, Tibet, photos 1-1 of 1 this day): What did this place smell / sound like?
+
+gallery::{photo}2010/05-16-Tibet[248:249]

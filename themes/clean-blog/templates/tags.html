@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="tags-cloud" style="margin-bottom:30px;">
-                        {% for tag, articles in tags_sorted_by_article_length %}
+                        {% for tag, articles in tags|by_article_count %}
                                 <a href="{{ SITEURL }}/{{ tag.url }}" class="tag-pill">
                                     <span class="tag-name">{{ tag.name }}</span>
                                     <span class="tag-count">{{ articles|length }}</span>

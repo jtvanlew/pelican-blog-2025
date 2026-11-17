@@ -9,6 +9,7 @@
 :make: Rivendell
 :year: 2022 
 :model: Gus Boots Wilsen
+:photo_tag: Gus
 :service_years: 2022-Present
 :condition: Semi-dedicated mountain bike
 :shop: Rivendell Bicycle Works, Walnut Creek, CA

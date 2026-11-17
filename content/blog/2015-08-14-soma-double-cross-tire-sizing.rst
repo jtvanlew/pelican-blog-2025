@@ -1,7 +1,7 @@
 Fit check for rear tires in SOMA Double Cross
 #############################################
 
-:tags: bikes, soma
+:tags: Bikes, Soma
 :title: SOMA Double Cross Tire Sizing
 :status: draft
 
@@ -10,7 +10,7 @@ Tire fit in rear triangle
 
 Googling for "largest tire rear triangle SOMA Double Cross" gives pathetically few results of value. SOMA's website claims there's room for a 38c with fender -- which is true but seems awful conservative. I _guess_ I can fit something like 45mm tires up in that joint. But since bike tires are about as damned expensive as the tires for my '01 Prizm, I hesitate to just dump some money on a guess. And considering there might be others out there like me, I'm providing this post as a reference with some cold, hard numbers.
 
-Right now I've got Schwalbe's 700x35c [Delta Cruiser](http://www.schwalbetires.com/bike_tires/road_tires/delta_cruiser_hs392). It fits no problem (the fenders are no longer on here but they always had plenty of clearance).
+Right now I've got Schwalbe's 700x35c `Delta Cruiser <http://www.schwalbetires.com/bike_tires/road_tires/delta_cruiser_hs392>`__. It fits no problem (the fenders are no longer on here but they always had plenty of clearance).
 
 .. image:: ../images/DSC_0485.JPG
    :alt: tire example 1

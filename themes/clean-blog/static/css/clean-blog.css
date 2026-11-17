@@ -233,6 +233,31 @@ html {
   max-height: 420px;
 }
 
+/* Featured photos (rated in digiKam, see PHOTO_FEATURED_RATING): their own row,
+   whole frame shown uncropped; tall ones are capped to the screen and centered. */
+.pswp-gallery .col-xs-12.gallery-featured {
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+.pswp-gallery .gallery-featured a {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.pswp-gallery .col-xs-12.gallery-featured img {
+  width: auto;
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+.pswp-gallery .gallery-featured img:hover,
+.pswp-gallery .gallery-featured a:focus img {
+  transform: scale(1.01);
+}
+.pswp-gallery .col-xs-3 {
+  padding: 0.45rem;
+}
+
 @media (max-width: 767px) {
   .pswp-gallery .col-xs-6,
   .pswp-gallery .col-xs-4 {
@@ -315,8 +340,8 @@ article {
 body {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   /* Adjusted base text size per request */
-  font-size: 1.4rem; /* lowered from 1.9rem */
-  line-height: 1.6;
+  font-size: 1.125rem; /* 18px; was 1.4rem (22px), too big for cards and lists */
+  line-height: 1.55;
   font-weight: 300;
   color: var(--text);
   background: var(--bg);
@@ -329,10 +354,11 @@ body {
   margin-right: auto;
 }
 .responsive-content p {
-  font-size: 1.3rem; 
+  font-size: 1.1875rem; /* 19px; was 1.3rem (21px) */
   line-height: 1.6;
   color: var(--text);
-  font-weight: 300;
+  font-weight: 400; /* Inter 300 is spindly on the dark background */
+  margin-bottom: 0.9em;
 }
 
 @media only screen and (max-width: 480px) {
@@ -426,7 +452,7 @@ hr.small {
   left: 0;
   width: 100%;
   z-index: 3;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Source Sans 3', Arial, sans-serif;
 }
 .navbar-custom .navbar-brand {
   font-weight: 800;
@@ -554,7 +580,7 @@ hr.small {
   font-size: 1.5rem; /* 24px */
   line-height: 1.1;
 			display: block;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Source Sans 3', Arial, sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
 }
@@ -571,7 +597,7 @@ hr.small {
   display: block;
 }
 .intro-header .post-heading .subheading {
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Source Sans 3', Arial, sans-serif;
   font-size: 1.5rem; /* 24px */
   margin: 10px 0 30px;
   font-weight: 600;
@@ -711,7 +737,7 @@ form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
 }
 .btn {
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Source Sans 3', Arial, sans-serif;
   text-transform: uppercase;
   font-size: 0.875rem; /* 14px */
   font-weight: 800;
@@ -734,7 +760,7 @@ form .row:first-child .floating-label-form-group {
 }
 .pager li > a,
 .pager li > span {
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Source Sans 3', Arial, sans-serif;
   text-transform: uppercase;
   font-size: 0.875rem; /* 14px */
   font-weight: 800;
@@ -864,7 +890,7 @@ body {
   border-radius: 8px;
   font-weight: 600;
 }
-.post-tags-inline { display: flex; gap: 0.5rem; align-items: center; }
+.post-tags-inline { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
 .tag-pill.small {
   padding: 0.22rem 0.5rem;
   font-size: 0.9rem;
@@ -887,3 +913,217 @@ body {
   .post-feature img { width: calc(100% + 30px); }
   .post-meta-row { gap: 0.5rem; }
 }
+
+/* Bike pages: photos from posts tagged with the bike (tagged_photos plugin) */
+.tagged-photos { margin-top: 40px; }
+.tagged-photos-group { margin-bottom: 32px; }
+.tagged-photos-group h3 small { margin-left: 8px; white-space: nowrap; }
+.tagged-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 6px;
+}
+.tagged-photos-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+@media (max-width: 480px) {
+    .tagged-photos-grid { grid-template-columns: repeat(3, 1fr); gap: 4px; }
+}
+
+/* Desktop navbar sits transparent on the dark page background; the old
+   #004E89 navy was nearly invisible there (~2:1 contrast). */
+@media only screen and (min-width: 768px) {
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav li a { color: var(--link); }
+  .navbar-custom .navbar-brand:hover,
+  .navbar-custom .navbar-brand:focus,
+  .navbar-custom .nav li a:hover,
+  .navbar-custom .nav li a:focus { color: var(--accent); }
+}
+
+/* Keep big display headings inside narrow screens */
+h1, h2, .post-title { overflow-wrap: break-word; }
+@media (max-width: 480px) {
+  .intro-header .post-heading h1,
+  .intro-header .page-heading h1 { font-size: 2.1rem; }
+  .responsive-content { padding-left: 15px; padding-right: 15px; }
+}
+
+/* Long button labels (e.g. "Jump down to...") must wrap on phones */
+.btn-wrap { white-space: normal; text-align: left; padding-left: 0; padding-right: 0; }
+
+/* ------------------------------------------------------------------
+   Cleanup pass (2026-11)
+   ------------------------------------------------------------------ */
+
+/* Home page cards: smaller text, tighter rhythm, no overflow from long URLs */
+.post-preview { margin-bottom: 2.25rem; }
+.post-preview .post-title {
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin: 0.6rem 0 0.4rem;
+}
+.post-preview .summary {
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  color: var(--text);
+}
+.post-preview .read-more { white-space: nowrap; }
+.post-preview .label { margin-bottom: 0.3rem; }
+.post-preview time { font-size: 0.85rem; }
+
+/* Pager: one row, newer left / count middle / older right */
+.site-pager {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 15px 2rem;
+}
+.site-pager-prev { justify-self: start; }
+.site-pager-next { justify-self: end; }
+.site-pager-count { color: var(--muted); font-size: 0.95rem; white-space: nowrap; }
+.site-pager .btn {
+  border-radius: 999px;
+  padding: 0.55rem 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+/* Article body: headings and lists in step with the smaller text */
+.responsive-content article li { font-size: 1.1875rem; line-height: 1.6; font-weight: 400; }
+.responsive-content article h2 { margin-top: 2.25rem; }
+.responsive-content article h3 { margin-top: 1.75rem; }
+.responsive-content article a { overflow-wrap: anywhere; }
+.lead.blurb { font-size: 1.15rem; line-height: 1.45; }
+
+/* Lightbox caption (see base.html) */
+.pswp__caption {
+  position: absolute;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  max-width: min(90vw, 760px);
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f2f2f2;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .responsive-content article li { font-size: 1rem; line-height: 1.5; }
+  .site-pager { gap: 0.5rem; }
+  .site-pager .btn { padding: 0.45rem 0.8rem; }
+}
+
+/* Remark42 comments (comments_remark42.html) */
+.comments { margin: 2.5rem 0 1rem; }
+.comments-title { font-size: 1.6rem; margin-bottom: 1rem; }
+
+/* ------------------------------------------------------------------
+   Layout pass (2026-11): mobile-first grid + fluid type.
+   Most visitors are on phones, so sizes start small and grow with the
+   screen via clamp(min, preferred, max) instead of fixed breakpoints.
+   ------------------------------------------------------------------ */
+
+/* Home / tag / archive cards */
+.post-list {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.post-grid {
+  display: grid;
+  /* as many 290px+ columns as fit: 3 desktop, 2 tablet, 1 phone */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
+  gap: 32px 26px;
+  align-items: start;
+}
+.post-grid .post-preview { margin: 0; }
+.post-preview a.post-thumb {
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.post-preview a.post-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 240ms ease;
+}
+.post-preview a.post-thumb:hover img { transform: scale(1.03); }
+.post-preview .post-tags { margin-top: 0.6rem; }
+.post-preview .post-title { font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.35rem); }
+
+/* Fluid type: phone -> desktop */
+body { font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); }
+.responsive-content p,
+.responsive-content article li {
+  font-size: clamp(1.0625rem, 0.99rem + 0.3vw, 1.1875rem); /* 17px -> 19px */
+  line-height: 1.6;
+}
+.intro-header .site-heading h1,
+.intro-header .page-heading h1 { font-size: clamp(2.5rem, 1.4rem + 5vw, 5rem); }
+.intro-header .post-heading h1 { font-size: clamp(1.9rem, 1.2rem + 3.2vw, 3.4rem); line-height: 1.1; }
+.responsive-content article h2 { font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem); }
+.responsive-content article h3 { font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem); }
+
+/* Phones */
+@media (max-width: 600px) {
+  /* shorter photos and trimmed text so more than one post fits per screen */
+  .post-preview a.post-thumb img { aspect-ratio: 3 / 2; }
+  .post-preview .summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .post-preview .post-tags .label:nth-child(n+4) { display: none; }
+  .post-grid { gap: 26px; }
+
+  /* the menu is only two links: show them instead of a hamburger */
+  .navbar-custom { background: transparent; border: 0; }
+  .navbar-custom .container-fluid { display: flex; align-items: center; justify-content: space-between; }
+  .navbar-custom .container-fluid::before,
+  .navbar-custom .container-fluid::after { display: none; }
+  .navbar-custom .navbar-header { margin: 0 !important; }
+  .navbar-custom .navbar-toggle { display: none; }
+  .navbar-custom .navbar-collapse,
+  .navbar-custom .navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    visibility: visible !important; /* Bootstrap hides collapsed menus this way too */
+  }
+  .navbar-custom .nav { display: flex; margin: 0; }
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav > li > a { color: var(--link); }
+  .navbar-custom .nav > li > a { padding: 15px 10px; }
+  .intro-header .page-heading,
+  .intro-header .post-heading { padding-top: 52px; padding-bottom: 16px; }
+  /* the page container already gives 15px each side; don't double it */
+  .responsive-content { padding-left: 0; padding-right: 0; }
+}
+
+/* Re-dated posts (templates/post_date.html): original date struck through, new date after */
+.post-dates { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
+.post-dates .date-original { text-decoration: line-through; opacity: 0.7; }
+.post-dates .date-redated { font-style: italic; }
+
+/* Footer quote (FOOTER_QUOTE in pelicanconf.py) */
+.footer-quote { margin: 0 auto 1rem; max-width: 34rem; text-align: center; color: var(--muted); }
+.footer-quote blockquote { margin: 0; padding: 0; border: 0; font-size: 1.05rem; font-style: italic; line-height: 1.5; }
+.footer-quote figcaption { margin-top: 0.4rem; font-size: 0.85rem; letter-spacing: 0.02em; }

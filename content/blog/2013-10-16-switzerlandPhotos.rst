@@ -1,9 +1,9 @@
-Switzerland photos
-##################
+Post-ISFNT Switzerland Trip
+###########################
 
 :date: 2013-10-16
 :modified: 2026-05-12
-:tags: travel, photography, switzerland
+:tags: Travel, Photography, Switzerland
 :image: {filename}../images/10262232036_495e77c443_z.jpg
 :gallery: {photo}2013/09-20-Switzerland
 :gallery_sort: filename

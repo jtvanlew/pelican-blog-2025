@@ -1,0 +1,27 @@
+# Remark42 comment server for jonvanlew.com
+# Lives on the VPS at ~/remark42/ next to a .env file (see README.md).
+services:
+  remark42:
+    image: umputun/remark42:latest
+    container_name: remark42
+    restart: unless-stopped
+    environment:
+      - REMARK_URL=https://comments.jonvanlew.com
+      - SITE=jonvanlew
+      - SECRET=${REMARK42_SECRET}            # random string, from .env
+      - ADMIN_PASSWD=${REMARK42_ADMIN_PASSWD} # only for import/backup commands, from .env
+      - TIME_ZONE=America/Los_Angeles
+      # Requests only arrive from the Cloudflare tunnel on this machine (via the
+      # Docker bridge), so trust its forwarded visitor IPs for rate limiting.
+      - TRUSTED_PROXY=172.16.0.0/12
+      - AUTH_ANON=true                       # visitors comment with just a name
+      # Your own login, needed to moderate (delete/pin/block) in the comment box.
+      # Pick one; see README step 3.
+      - AUTH_GITHUB_CID=${GITHUB_CID}
+      - AUTH_GITHUB_CSEC=${GITHUB_CSEC}
+      - ADMIN_SHARED_ID=github_96730ba1e172518f25bbe9c6fe739b4557932a3a
+      - EMOJI=true
+    ports:
+      - "127.0.0.1:8080:8080"   # local only; the Cloudflare tunnel route points here
+    volumes:
+      - ./var:/srv/var          # comments database + automatic daily backups

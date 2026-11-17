@@ -1,0 +1,29 @@
+Slovenia (2019-11-15)
+#####################
+
+:date: 2019-11-15
+:tags: Slovenia, Ljubljana, Travel
+:image: {photo}2019/11-15-Slovenia/20191116_114640_IMG_1733.jpg
+:gallery: {photo}2019/11-15-Slovenia
+:summary: TODO one-line summary of Slovenia
+:status: draft
+
+TODO: intro for Slovenia. Auto-generated draft from digiKam (46 photos, everything not marked Rejected).
+
+Day 1: Fri November 15, 2019 - Slovenia, Ljubljana
+--------------------------------------------------
+
+TODO (Slovenia, Ljubljana, photos 1-11 of 11 this day): What was the plan for this part of the day?
+
+gallery::{photo}2019/11-15-Slovenia[0:11]
+
+Day 2: Sat November 16, 2019 - Slovenia, Ljubljana
+--------------------------------------------------
+
+TODO (Slovenia, Ljubljana, photos 1-20 of 35 this day): Where are we here, and how did we get there?
+
+gallery::{photo}2019/11-15-Slovenia[11:31]
+
+TODO (Slovenia, Ljubljana, photos 21-35 of 35 this day): Who was along for this stretch?
+
+gallery::{photo}2019/11-15-Slovenia[31:46]

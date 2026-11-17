@@ -1,0 +1,123 @@
+Japan (2018-03-19)
+##################
+
+:date: 2018-03-19
+:tags: Japan, Himeji, Kyoto, Nara, Osaka, Travel
+:image: {photo}2018/03-19-Japan/20180321_210744_DSC_0298.jpg
+:gallery: {photo}2018/03-19-Japan
+:summary: TODO one-line summary of Japan
+:status: draft
+
+TODO: intro for Japan. Auto-generated draft from digiKam (365 photos, everything not marked Rejected).
+
+Day 1: Sat January 4, 2014 - Japan
+----------------------------------
+
+TODO (Japan, photos 1-6 of 6 this day): What was the plan for this part of the day?
+
+gallery::{photo}2018/03-19-Japan[0:6]
+
+Day 2: Mon March 19, 2018 - Japan, Osaka
+----------------------------------------
+
+TODO (Japan, Osaka, photos 1-17 of 17 this day): Where are we here, and how did we get there?
+
+gallery::{photo}2018/03-19-Japan[6:23]
+
+Day 3: Tue March 20, 2018 - Japan, Nara, Osaka
+----------------------------------------------
+
+TODO (Japan, Nara, Osaka, photos 1-20 of 61 this day): Who was along for this stretch?
+
+gallery::{photo}2018/03-19-Japan[23:43]
+
+TODO (Japan, Nara, Osaka, photos 21-40 of 61 this day): Best thing eaten or drunk around here?
+
+gallery::{photo}2018/03-19-Japan[43:63]
+
+TODO (Japan, Nara, Osaka, photos 41-61 of 61 this day): Anything go sideways here?
+
+gallery::{photo}2018/03-19-Japan[63:84]
+
+Day 4: Wed March 21, 2018 - Japan, Himeji, Nara, Osaka
+------------------------------------------------------
+
+TODO (Japan, Himeji, Nara, Osaka, photos 1-20 of 91 this day): What's the story behind these shots?
+
+gallery::{photo}2018/03-19-Japan[84:104]
+
+TODO (Japan, Himeji, Nara, Osaka, photos 21-40 of 91 this day): What did this place smell / sound like?
+
+gallery::{photo}2018/03-19-Japan[104:124]
+
+TODO (Japan, Himeji, Nara, Osaka, photos 41-60 of 91 this day): Something you'd tell a friend going here.
+
+gallery::{photo}2018/03-19-Japan[124:144]
+
+TODO (Japan, Himeji, Nara, Osaka, photos 61-80 of 91 this day): What was the plan for this part of the day?
+
+gallery::{photo}2018/03-19-Japan[144:164]
+
+TODO (Japan, Himeji, Nara, Osaka, photos 81-91 of 91 this day): Where are we here, and how did we get there?
+
+gallery::{photo}2018/03-19-Japan[164:175]
+
+Day 5: Thu March 22, 2018 - Japan, Himeji, Kyoto
+------------------------------------------------
+
+TODO (Japan, Himeji, Kyoto, photos 1-20 of 109 this day): Who was along for this stretch?
+
+gallery::{photo}2018/03-19-Japan[175:195]
+
+TODO (Japan, Himeji, Kyoto, photos 21-40 of 109 this day): Best thing eaten or drunk around here?
+
+gallery::{photo}2018/03-19-Japan[195:215]
+
+TODO (Japan, Himeji, Kyoto, photos 41-60 of 109 this day): Anything go sideways here?
+
+gallery::{photo}2018/03-19-Japan[215:235]
+
+TODO (Japan, Himeji, Kyoto, photos 61-80 of 109 this day): What's the story behind these shots?
+
+gallery::{photo}2018/03-19-Japan[235:255]
+
+TODO (Japan, Himeji, Kyoto, photos 81-100 of 109 this day): What did this place smell / sound like?
+
+gallery::{photo}2018/03-19-Japan[255:275]
+
+TODO (Japan, Himeji, Kyoto, photos 101-109 of 109 this day): Something you'd tell a friend going here.
+
+gallery::{photo}2018/03-19-Japan[275:284]
+
+Day 6: Fri March 23, 2018 - Japan, Kyoto, Osaka
+-----------------------------------------------
+
+TODO (Japan, Kyoto, Osaka, photos 1-20 of 78 this day): What was the plan for this part of the day?
+
+gallery::{photo}2018/03-19-Japan[284:304]
+
+TODO (Japan, Kyoto, Osaka, photos 21-40 of 78 this day): Where are we here, and how did we get there?
+
+gallery::{photo}2018/03-19-Japan[304:324]
+
+TODO (Japan, Kyoto, Osaka, photos 41-60 of 78 this day): Who was along for this stretch?
+
+gallery::{photo}2018/03-19-Japan[324:344]
+
+TODO (Japan, Kyoto, Osaka, photos 61-78 of 78 this day): Best thing eaten or drunk around here?
+
+gallery::{photo}2018/03-19-Japan[344:362]
+
+Day 7: Sat March 24, 2018 - Japan, Osaka
+----------------------------------------
+
+TODO (Japan, Osaka, photos 1-2 of 2 this day): Anything go sideways here?
+
+gallery::{photo}2018/03-19-Japan[362:364]
+
+Day 8: Thu August 19, 2021 - Japan, Kyoto
+-----------------------------------------
+
+TODO (Japan, Kyoto, photos 1-1 of 1 this day): What's the story behind these shots?
+
+gallery::{photo}2018/03-19-Japan[364:365]

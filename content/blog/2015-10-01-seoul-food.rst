@@ -2,15 +2,15 @@ Seoul food
 ##########
 
 :description: "walking through my stomach's tour of Seoul"
-:tags: travel, food, south korea
+:tags: Travel, Food, South Korea
 :image: {filename}../images/DSC_0828.jpg
 
 
-I had a trip to South Korea in September, for a fusion engineering conference on Jeju Island ([my work was... OK](http://www.mae.ucla.edu/jon-van-lew-wins-best-student-award-at-isfnt/)). 
+I had a trip to South Korea in September, for a fusion engineering conference on Jeju Island (`my work was... OK <http://www.mae.ucla.edu/jon-van-lew-wins-best-student-award-at-isfnt/>`__). 
 
 After the conference I took a side trip to Seoul to visit some old Korean friends I hadn't seen since 2008. Back in '08, we were all studying Chinese at Nanjing Normal University in neighboring classrooms and we quickly became friends. As a small group we would go out to eat together practically every day -- often to Korean-style restaurants around Nanjing. That was my first introduction to Korean food and I was immediately in love with it -- at that time it was bibimbop that ruled over all.
 
-Living in LA, Korean food is everywhere and I now eat it regularly, but somehow I just stuck to the mainstays: bibimbap, galbi, and bulgogi. Though I was introduced to, and subsequently obsessed with, [soon tofu stews](http://www.tofuya.la/).
+Living in LA, Korean food is everywhere and I now eat it regularly, but somehow I just stuck to the mainstays: bibimbap, galbi, and bulgogi. Though I was introduced to, and subsequently obsessed with, `soon tofu stews <http://www.tofuya.la/>`__.
 
 What's the point of this introduction? That all I really wanted to do in Korea was eat food. I had a lot of extremely delicious classics and discovered some new favorites. Below is my ode to Korean food, listed in a kind of top 10
 

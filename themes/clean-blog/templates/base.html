@@ -53,8 +53,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Inter (body), Source Sans 3 (smaller headers), Abril Fatface (display h1), Caprasimo (alternate display) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Source+Sans+3:wght@400;600&family=Abril+Fatface&family=Caprasimo&display=swap" rel="stylesheet">
+    <!-- Inter (body), Source Sans 3 (small headers, nav, buttons), Caprasimo (display headings) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Source+Sans+3:wght@400;600;700&family=Caprasimo&display=swap" rel="stylesheet">
+
+    {# Optional playful layout variant (THEME_VARIANT in pelicanconf.py) #}
+    {% if THEME_VARIANT %}
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/variant-{{ THEME_VARIANT }}.css{{ v }}" rel="stylesheet">
+    {% endif %}
 
 
         <!-- Code highlight color scheme -->
@@ -67,7 +73,7 @@
         <!-- Custom Fonts -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    {# Open Sans and Abril Fatface removed 2026-11: unused or replaced by Source Sans 3 (fewer font downloads on phones) #}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -87,6 +93,9 @@
 {% set body_classes = [] %}
 {% if PALETTE %}
     {% set body_classes = body_classes + ['palette-' + PALETTE] %}
+{% endif %}
+{% if THEME_VARIANT %}
+    {% set body_classes = body_classes + ['variant-' + THEME_VARIANT] %}
 {% endif %}
 {% if page and page.bgcolor %}
     {% set body_classes = body_classes + [page.bgcolor] %}
@@ -142,10 +151,8 @@
         </div>
     </header>
     <!-- Main Content -->
-    <div class="container-xl">
-        <div class="row">
-            {% block content %}{% endblock content %}
-        </div>
+    <div class="container-fluid">
+        {% block content %}{% endblock content %}
     </div>
 
     <hr>
@@ -155,15 +162,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p class="copyright text-muted">Blog powered by <a href="http://getpelican.com">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.</p>
+                    {# FOOTER_QUOTE / FOOTER_QUOTE_CITE in pelicanconf.py; empty -> no footer text #}
+                    {% if FOOTER_QUOTE %}
+                    <figure class="footer-quote">
+                        {# line breaks in FOOTER_QUOTE (a '''triple-quoted''' string) are kept #}
+                        <blockquote>{{ FOOTER_QUOTE|trim|e|replace('\n', '<br>\n')|safe }}</blockquote>
+                        {% if FOOTER_QUOTE_CITE %}<figcaption>&mdash; {{ FOOTER_QUOTE_CITE }}</figcaption>{% endif %}
+                    </figure>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </footer>
 </div>
     <!-- jQuery -->
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.js{{ v }}"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.min.js{{ v }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/bootstrap.min.js{{ v }}"></script>
@@ -172,10 +185,7 @@
     <!-- <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/clean-blog.min.js"></script> -->
 
     {% include 'analytics.html' %}
-    {% include 'disqus_script.html' %}
 
-    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- Gallery layout randomizer: break up large galleries into varied rows -->
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/gallery-randomizer.js{{ v }}"></script>
     <script type="module">
@@ -189,6 +199,24 @@
                     children: 'a',
                     pswpModule: PhotoSwipe
                 });
+        // Show the photo's caption (from captions.txt / digiKam, carried in the
+        // thumbnail's alt text) along the bottom of the lightbox.
+        lightbox.on('uiRegister', function () {
+            lightbox.pswp.ui.registerElement({
+                name: 'caption',
+                order: 9,
+                isButton: false,
+                appendTo: 'root',
+                onInit: function (el, pswp) {
+                    pswp.on('change', function () {
+                        const img = pswp.currSlide.data.element && pswp.currSlide.data.element.querySelector('img');
+                        const text = img ? img.getAttribute('alt') : '';
+                        el.textContent = text || '';
+                        el.hidden = !text;
+                    });
+                }
+            });
+        });
         lightbox.init();
     </script>
 

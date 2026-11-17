@@ -8,6 +8,7 @@
 :make: Rivendell
 :year: 2024
 :model: Roaduno
+:photo_tag: Roaduno
 :service_years: 2024-Present
 :condition: Local tool-around-er
 :shop: Rivendell Bicycle Works, Walnut Creek, CA

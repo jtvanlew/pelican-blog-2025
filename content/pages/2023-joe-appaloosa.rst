@@ -8,6 +8,7 @@
 :make: Rivendell
 :year: 2023
 :model: Joe Appaloosa
+:photo_tag: Appaloosa
 :service_years: 2023-Present
 :condition: Bike camper, child commuter
 :shop: Rivendell Bicycle Works, Walnut Creek, CA

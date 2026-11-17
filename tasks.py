@@ -139,15 +139,40 @@ def livereload(c):
     server.serve(host=CONFIG["host"], port=CONFIG["port"], root=CONFIG["deploy_path"])
 
 
-@task
-def publish(c):
-    """Publish to production via rsync"""
+PUBLISH_PATH = "output-publish"  # must match OUTPUT_PATH in publishconf.py
+
+
+def _wsl_path(path):
+    """C:\\Users\\x\\site -> /mnt/c/Users/x/site (for rsync running inside WSL)."""
+    full = os.path.abspath(path)
+    drive, rest = os.path.splitdrive(full)
+    return "/mnt/" + drive.rstrip(":").lower() + rest.replace("\\", "/")
+
+
+@task(help={"dry_run": "List what would change on the server without sending anything"})
+def publish(c, dry_run=False):
+    """Build the public site (no drafts) and rsync it to the VPS.
+
+    Windows has no rsync, so it runs inside WSL (Ubuntu) and logs in with the
+    normal Windows SSH key via ssh.exe. -c compares file contents, so only the
+    pages/photos that actually changed are uploaded. --delete removes server
+    files that are no longer in the build; /drafts/ on the server is left alone.
+    """
     pelican_run("-s {settings_publish}".format(**CONFIG))
+    src = PUBLISH_PATH.rstrip("/") + "/"
+    if os.name == "nt":
+        src = _wsl_path(src) + "/"
+        prefix = "wsl -e "
+        ssh = "ssh.exe"
+    else:
+        prefix, ssh = "", "ssh"
     c.run(
-        'rsync --delete --exclude ".DS_Store" -pthrvz -c '
-        '-e "ssh -p {ssh_port}" '
-        "{} {ssh_user}@{ssh_host}:{ssh_path}".format(
-            CONFIG["deploy_path"].rstrip("/") + "/", **CONFIG
+        prefix + "rsync -rtzc --delete --itemize-changes --stats "
+        '--exclude .DS_Store --exclude "*Zone.Identifier" --exclude /drafts/ '
+        "--chmod=D755,F644 "
+        '-e "{ssh} -p {ssh_port}" {dry}'
+        "{src} {ssh_user}@{ssh_host}:{ssh_path}/".format(
+            ssh=ssh, src=src, dry="-n " if dry_run else "", **CONFIG
         )
     )
 
